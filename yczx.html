@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验厂咨询 - 山东英检国际质量技术服务有限公司</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Microsoft YaHei","PingFang SC",Arial,sans-serif; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* Top Bar */
+        .header-top-bar { background: #444; height: 28px; line-height: 28px; font-size: 12px; }
+        .header-top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-top-bar-left { display: flex; align-items: center; }
+        .header-top-bar-left .cn-name { color: #fff; margin-right: 15px; }
+        .header-top-bar-left .en-name { color: #bbb; }
+        .header-top-bar-right a { color: #ccc; margin-left: 15px; }
+        .header-top-bar-right a:hover { color: #fff; }
+
+        /* Header */
+        .header { background: #fff; height: 100px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-content { display: flex; justify-content: center; align-items: center; height: 100%; padding-top: 19px; gap: 60px; }
+        .logo { display: flex; align-items: center; flex-shrink: 0; }
+        .logo img { height: 45px; margin-right: 12px; flex-shrink: 0; }
+        .logo-text h1 { font-size: 20px; color: #333; font-weight: bold; line-height: 1.3; white-space: nowrap; }
+        .logo-text p { font-size: 11px; color: #333; line-height: 1.3; white-space: nowrap; letter-spacing: 0.3px; }
+        .header-center { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; }
+        .header-center .search-box { margin-bottom: 6px; }
+        .header-center .header-tags { justify-content: space-between; width: 361px; margin-left: auto; margin-right: auto; }
+        .header-right { flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
+        .search-box { display: flex; border: 1px solid #ddd; border-radius: 0; overflow: hidden; height: 35px; }
+        .search-box select { width: 80px; padding: 8px 5px; border: none; border-right: 1px solid #ddd; outline: none; font-size: 12px; background: #fff; cursor: pointer; height: 100%; }
+        .search-box input { width: 225px; padding: 8px 12px; border: none; outline: none; font-size: 12px; height: 100%; }
+        .search-box button { padding: 8px 15px; height: 100%; background: #0066cc; color: #fff; border: none; cursor: pointer; font-size: 12px; }
+        .hotline { text-align: right; line-height: 1.4; }
+        .hotline .phone { font-size: 23px; color: #0066cc; font-weight: bold; }
+        .header-tags { display: flex; gap: 4px; align-items: center; }
+        .header-tags span { padding: 2px 6px; font-size: 11px; border-radius: 2px; cursor: pointer; background: #0066cc; color: #fff; }
+
+        /* Navigation */
+        .nav { background: #004B87; position: sticky; top: 0; z-index: 100; }
+        .nav ul { display: flex; justify-content: center; }
+        .nav ul li { position: relative; }
+        .nav ul li a { display: block; padding: 10px 22px; color: #fff; font-size: 14px; transition: background 0.3s; text-align: center; line-height: 1.3; }
+        .nav ul li a:hover { background: #003d6b; }
+        .nav ul li a.active { background: #003366; }
+
+        /* Banner */
+        .page-banner {
+            height: 400px;
+            background-image: url('images/banner_yczx.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .breadcrumb {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a { color: rgba(255,255,255,0.7); }
+        .breadcrumb a:hover { color: #fff; }
+
+        /* Floating Toolbar */
+        .floating-toolbar { position: fixed; right: 15px; top: 50%; transform: translateY(-50%); z-index: 999; display: flex; flex-direction: column; gap: 12px; background: transparent; }
+        .floating-toolbar .tool-item { width: 54px; height: 54px; background: #003366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; position: relative; transition: all 0.3s; box-shadow: 0 3px 10px rgba(0,51,102,0.45); }
+        .floating-toolbar .tool-item:hover { background: #0055aa; transform: scale(1.08); }
+        .floating-toolbar .tool-item svg { width: 24px; height: 24px; fill: #fff; }
+        .floating-toolbar .tool-item .tool-tip { position: absolute; right: 62px; top: 50%; transform: translateY(-50%); background: #333; color: #fff; padding: 6px 12px; border-radius: 4px; font-size: 12px; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .floating-toolbar .tool-item:hover .tool-tip { opacity: 1; visibility: visible; }
+        .floating-toolbar .back-to-top { background: #003366; }
+        .floating-toolbar .back-to-top:hover { background: #0055aa; }
+        /* Popup */
+        .ft-popup { position: fixed; right: 80px; background: #fff; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,0.25); z-index: 1001; opacity: 0; visibility: hidden; transform: translateX(20px); transition: all 0.3s; }
+        .ft-popup.show { opacity: 1; visibility: visible; transform: translateX(0); }
+        .ft-popup-close { position: absolute; top: 6px; right: 8px; width: 22px; height: 22px; background: #ff4d4f; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; cursor: pointer; line-height: 1; }
+        /* Chat Popup */
+        .ft-chat-popup { width: 340px; height: 460px; display: flex; flex-direction: column; top: 50%; transform: translateY(-50%); }
+        .ft-chat-popup.show { transform: translateY(-50%); }
+        .ft-chat-header { display: flex; align-items: center; padding: 10px 12px; background: #0066cc; color: #fff; border-radius: 10px 10px 0 0; gap: 8px; }
+        .ft-chat-header-left { flex-shrink: 0; }
+        .ft-chat-logo img { width: 36px; height: 36px; border-radius: 4px; }
+        .ft-chat-header-title { flex: 1; font-size: 14px; font-weight: bold; }
+        .ft-chat-header-right { flex-shrink: 0; }
+        .ft-chat-body { flex: 1; overflow-y: auto; padding: 10px; background: #f0f4f8; }
+        .ft-chat-msg { margin-bottom: 10px; font-size: 13px; line-height: 1.5; }
+        .ft-chat-msg-system { background: #fff3cd; color: #856404; padding: 8px 10px; border-radius: 6px; }
+        .ft-chat-msg-user { text-align: right; }
+        .ft-chat-msg-user .ft-chat-bubble { background: #0066cc; color: #fff; display: inline-block; padding: 6px 10px; border-radius: 12px 12px 0 12px; text-align: left; max-width: 85%; }
+        .ft-chat-msg-agent .ft-chat-bubble { background: #fff; color: #333; display: inline-block; padding: 6px 10px; border-radius: 12px 12px 12px 0; }
+        .ft-chat-meta { font-size: 11px; color: #999; margin-top: 3px; }
+        .ft-chat-input { border-top: 1px solid #e0e6ed; background: #fff; padding: 8px; }
+        .ft-chat-callback { display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #fff; border-top: 1px solid #e0e6ed; margin-bottom: 4px; }
+        .ft-chat-callback input { flex: 1; padding: 5px 10px; border: 1px solid #cce0f5; border-radius: 4px; font-size: 12px; outline: none; background: #eaf3fc; min-width: 0; }
+        .ft-chat-callback-btn { padding: 5px 10px; background: #1e6bd6; color: #fff; border: none; border-radius: 4px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+        .ft-chat-input-main { position: relative; }
+        .ft-chat-icons { display: flex; gap: 4px; padding: 4px 0; }
+        .ft-chat-icon-btn { background: none; border: none; cursor: pointer; font-size: 16px; line-height: 1; padding: 2px 4px; }
+        .ft-chat-textarea-wrap { position: relative; }
+        .ft-chat-textarea-wrap textarea { width: 100%; height: 60px; padding: 6px 60px 6px 10px; border: 1px solid #cce0f5; border-radius: 4px; font-size: 12px; font-family: inherit; line-height: 1.5; resize: none; outline: none; background: #eaf3fc; box-sizing: border-box; word-wrap: break-word; }
+        .ft-chat-textarea-wrap textarea:focus { border-color: #1e6bd6; }
+        #ftChatSendBtn { position: absolute; right: 0; bottom: 0; width: 54px; height: 60px; padding: 4px 8px; background: #1e6bd6; color: #fff; border: none; font-size: 13px; cursor: pointer; }
+        #ftChatSendBtn:hover { background: #1554ad; }
+        /* Phone Popup */
+        .ft-phone-popup { width: 200px; padding: 20px; text-align: center; top: 50%; transform: translateY(-50%); }
+        .ft-phone-popup.show { transform: translateY(-50%); }
+        .phone-title { font-size: 14px; color: #666; margin-bottom: 6px; }
+        .phone-num { font-size: 22px; color: #0066cc; font-weight: bold; margin-bottom: 12px; }
+        .phone-divider { color: #ddd; margin-bottom: 12px; }
+        .phone-label { font-size: 12px; color: #999; }
+        /* QR Popup */
+        .ft-qr-popup { width: 200px; padding: 15px; text-align: center; top: 50%; transform: translateY(-50%); }
+        .ft-qr-popup.show { transform: translateY(-50%); }
+        .qr-img { width: 160px; height: 160px; margin-bottom: 10px; }
+        .qr-text { font-size: 13px; color: #333; line-height: 1.6; }
+        .qr-text small { display: block; font-size: 11px; color: #999; margin-top: 4px; }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: space-between;
+            width: 880px;
+            margin: 0 auto 30px;
+        }
+        .category-tab {
+            padding: 10px 0;
+            background: transparent;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            text-align: center;
+        }
+        .category-tab:hover,
+        .category-tab.active {
+            background: #0066cc;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        /* Grid Container: 910x790 */
+        .grid-container {
+            width: 910px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px 60px;
+        }
+
+        /* Image Grid: 3 cols x 4 rows, each 280x160 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 280px);
+            grid-template-rows: repeat(4, 160px);
+            gap: 20px;
+            justify-content: center;
+        }
+        .grid-item {
+            width: 280px;
+            height: 160px;
+            background: #f5f7fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .grid-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,102,204,0.2);
+            border-color: #0066cc;
+        }
+        .grid-item img {
+            width: 280px;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .grid-item .placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8f0fe;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding-bottom: 60px;
+        }
+        .pagination button,
+        .pagination span {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .pagination button:hover { background: #0066cc; color: #fff; border-color: #0066cc; }
+        .pagination .active { background: #0066cc; color: #fff; border-color: #0066cc; }
+
+        /* Footer */
+        .footer { background: #1a1a1a; color: #fff; padding: 50px 0 20px; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid #333; }
+        .footer-about h3 { font-size: 20px; margin-bottom: 15px; white-space: nowrap; }
+        .footer-about p { font-size: 14px; color: #aaa; line-height: 1.7; }
+        .footer-links h4 { font-size: 16px; margin-bottom: 15px; color: #fff; }
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #aaa; font-size: 14px; }
+        .footer-links ul li a:hover { color: #0066cc; }
+        .footer-contact p { font-size: 14px; color: #aaa; margin-bottom: 8px; }
+        .footer-contact .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+        .footer-contact .contact-label { color: #666; min-width: 60px; }
+        .footer-bottom { padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { font-size: 13px; color: #666; }
+        .footer-qr { text-align: center; }
+        .footer-qr img { width: 100px; height: 100px; background: #fff; padding: 5px; border-radius: 5px; }
+        .footer-qr p { margin-top: 8px; font-size: 12px; }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .grid-container { width: 100%; padding: 0 10px 40px; }
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 120px);
+                gap: 10px;
+            }
+            .grid-item, .grid-item img { width: 100%; height: 120px; }
+        }
+        @media (max-width: 768px) {
+            .nav ul { flex-wrap: wrap; }
+            .nav ul li a { padding: 8px 15px; font-size: 13px; }
+            .page-banner h1 { font-size: 32px; }
+            .category-tabs { flex-wrap: wrap; gap: 10px; }
+            .category-tab { padding: 8px 20px; font-size: 13px; }
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 120px);
+            }
+            .grid-item, .grid-item img { width: 100%; height: 120px; }
+            .footer-top { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8dc596d7a7a18dba71186a42165b6eb7";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body onload="setTimeout(function(){var p=document.getElementById('ftChatPopup');if(p)p.classList.add('show')},500)">
+    <!-- Top Bar -->
+    <div class="header-top-bar" style="display:none;">
+        <div class="container">
+            <div class="header-top-bar-content">
+                <div class="header-top-bar-left">
+                    <span class="cn-name">山东英检国际质量技术服务有限公司</span>
+                    <span class="en-name">Yingjian International Quality Technology Service Co., Ltd.</span>
+                </div>
+                <div class="header-top-bar-right">
+                    <a href="#">集团联系目录</a>
+                    <a href="#">网站地图</a>
+                    <a href="#">加入收藏</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/yingjian-logo.png" alt="英检logo" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <h1>山东英检国际质量技术服务有限公司</h1>
+                        <p>Yingjian International Quality Technology Service Co., Ltd.</p>
+                    </div>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <select><option>文章</option></select>
+                        <input type="text" placeholder="搜索服务项目...">
+                        <button>搜索</button>
+                    </div>
+                    <div class="header-tags">
+                        <span>FSC</span>
+                        <span>SMETA</span>
+                        <span>FDA</span>
+                        <span>GRS</span>
+                        <span>BRC</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="hotline">
+                        <p class="phone">客服热线：400-088-9001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav"><div class="container"><ul><li><a href="index.html">网站首页</a></li><li><a href="yczx.html">验厂咨询</a></li><li><a href="spzx.html">食品咨询</a></li><li><a href="rzzx.html">认证咨询</a></li><li><a href="lsgyl.html">绿色供应链</a></li><li><a href="index.html#section-cases">客户案例</a></li><li><a href="zjtd.html">专家团队</a></li><li><a href="zyhz.html">资源合作</a></li><li><a href="about.html">关于英检</a></li><li><a href="lxwm.html">联系我们</a></li></ul></div></nav>
+
+    <!-- Banner -->
+    <section class="page-banner">
+        <div class="banner-spacer"></div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <div class="category-tab active">社会责任验厂</div>
+                <div class="category-tab">质量验厂</div>
+                <div class="category-tab">反恐验厂</div>
+                <div class="category-tab">食品安全验厂</div>
+            </div>
+        </div>
+
+        <!-- Grid Container 910x790 -->
+        <div class="grid-container">
+            <!-- 社会责任验厂 -->
+            <div class="image-grid" id="tab-social">
+                <div class="grid-item"><a href="smeta.html"><img src="images/yczx_social_1.png" alt="SMETA"></a></div>
+                <div class="grid-item"><a href="sedex.html"><img src="images/yczx_social_2.png" alt="SEDEX"></a></div>
+                <div class="grid-item"><a href="slcp.html"><img src="images/yczx_social_3.png" alt="SLCP"></a></div>
+                <div class="grid-item"><a href="bsci.html"><img src="images/yczx_social_4.png" alt="BSCI"></a></div>
+                <div class="grid-item"><a href="disney.html"><img src="images/yczx_social_5.png" alt="Disney"></a></div>
+                <div class="grid-item"><a href="walmart.html"><img src="images/yczx_social_6.png" alt="Walmart"></a></div>
+                <div class="grid-item"><a href="costco.html"><img src="images/yczx_social_7.png" alt="Costco"></a></div>
+                <div class="grid-item"><a href="wca.html"><img src="images/yczx_social_8.png" alt="WCA"></a></div>
+                <div class="grid-item"><a href="tesco.html"><img src="images/yczx_social_9.png" alt="TESCO"></a></div>
+                <div class="grid-item"><a href="target.html"><img src="images/yczx_social_10.png" alt="Target"></a></div>
+                <div class="grid-item"><a href="rba.html"><img src="images/yczx_social_11.png" alt="RBA"></a></div>
+                <div class="grid-item"><a href="higg.html"><img src="images/yczx_social_12.png" alt="Higg"></a></div>
+            </div>
+
+            <!-- 质量验厂 -->
+            <div class="image-grid" id="tab-quality" style="display:none;">
+                <div class="grid-item"><a href="iso9001.html"><img src="images/yczx_quality_1.png" alt="ISO9001"></a></div>
+                <div class="grid-item"><a href="iso14001.html"><img src="images/yczx_quality_2.png" alt="ISO14001"></a></div>
+                <div class="grid-item"><a href="iso45001.html"><img src="images/yczx_quality_3.png" alt="ISO45001"></a></div>
+            </div>
+
+            <!-- 反恐验厂 -->
+            <div class="image-grid" id="tab-security" style="display:none;">
+                <div class="grid-item"><a href="gsv.html"><img src="images/yczx_security_1.png" alt="C-TPAT"></a></div>
+                <div class="grid-item"><a href="scan.html"><img src="images/yczx_security_2.png" alt="SCAN"></a></div>
+                <div class="grid-item"><a href="ctpat.html"><img src="images/yczx_security_3.png" alt="GSV"></a></div>
+                <div class="grid-item"><a href="aeo.html"><img src="images/yczx_security_4.png" alt="AEORZ"></a></div>
+            </div>
+
+            <!-- 食品安全验厂 -->
+            <div class="image-grid" id="tab-food" style="display:none;">
+                <div class="grid-item"><a href="iso22000.html"><img src="images/yczx_food_1.png" alt="ISO22000"></a></div>
+                <div class="grid-item"><a href="haccp.html"><img src="images/yczx_food_2.png" alt="HACCP"></a></div>
+                <div class="grid-item"><a href="fda.html"><img src="images/yczx_food_3.png" alt="FDA"></a></div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <h3>山东英检国际质量技术服务有限公司</h3>
+                    <p>国内成立较早的规模较大的验厂服务机构，专业从事现代企业管理研究和国际标准认证咨询的顾问机构。</p>
+                    <p style="margin-top:10px;">服务热线：400-088-9001 / 400-967-7001</p>
+                </div>
+                <div class="footer-links">
+                    <h4>关于英检</h4>
+                    <ul>
+                        <li><a href="#section-about">公司简介</a></li>
+                        <li><a href="#section-team">专家团队</a></li>
+                        <li><a href="#section-process">服务流程</a></li>
+                        <li><a href="#section-promises">服务承诺</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务范围</h4>
+                    <ul>
+                        <li><a href="yczx.html">验厂咨询</a></li>
+                        <li><a href="spzx.html">食品咨询</a></li>
+                        <li><a href="rzzx.html">认证咨询</a></li>
+                        <li><a href="lsgyl.html">绿色供应链</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>热门服务</h4>
+                    <ul>
+                        <li><a href="#">SMETA验厂/Sedex验厂</a></li>
+                        <li><a href="#">FSC森林认证</a></li>
+                        <li><a href="#">GRS认证</a></li>
+                        <li><a href="#">BSCI认证</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p>争议部咨询：400-088-9001</p>
+                    <p>食品热线：400-967-7001</p>
+                    <p>北京办公室 / 上海办公室 / 济南办公室</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 山东英检国际质量技术服务有限公司 版权所有</p>
+                <div class="footer-qr">
+                    <img src="images/wechat_qr_new.jpg" alt="微信公众号">
+                    <p>关注微信公众号</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Toolbar -->
+    <div class="floating-toolbar">
+        <div class="tool-item" id="ftChatBtn" title="在线咨询">
+            <span class="tool-tip">在线咨询</span>
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+        </div>
+        <div class="tool-item" id="ftPhoneBtn" title="电话咨询">
+            <span class="tool-tip">400-088-9001</span>
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="tool-item" id="ftQrBtn" title="加微信咨询">
+            <span class="tool-tip">加微信咨询</span>
+            <svg viewBox="0 0 24 24"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm8-6v2h2V5h-2zm0 4v2h2v-2h-2zm2 4v2h2v-2h-2zm0-4v2h2v-2h-2z"/></svg>
+        </div>
+        <div class="tool-item back-to-top" id="ftTopBtn" title="回到顶部">
+            <span class="tool-tip">回到顶部</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+        </div>
+    </div>
+
+    <!-- Floating Toolbar Popups -->
+    <div class="ft-popup ft-chat-popup" id="ftChatPopup">
+        <div class="ft-chat-header">
+            <div class="ft-chat-header-left"><div class="ft-chat-logo"><img src="images/yingjian-logo.png" alt="英检logo"></div></div>
+            <div class="ft-chat-header-title">客服--小崔</div>
+            <div class="ft-chat-header-right"><span class="ft-popup-close ft-chat-win-close" data-close="ftChatPopup" title="关闭">×</span></div>
+        </div>
+        <div class="ft-chat-body">
+            <div class="ft-chat-msg ft-chat-msg-system">[系统提示] 您好，我是人工客服小崔，您有什么需要咨询的可以联系我，电话<strong>15265272850</strong>（微信同号），谢谢！</div>
+            <div class="ft-chat-msgs" id="ftChatMsgs"></div>
+        </div>
+        <div class="ft-chat-input">
+            <div class="ft-chat-callback"><input type="text" placeholder="请输入手机号码" maxlength="11"><button type="button" class="ft-chat-callback-btn">给我回电</button></div>
+            <div class="ft-chat-input-main">
+                <div class="ft-chat-icons">
+                    <button type="button" class="ft-chat-icon-btn" title="表情">😀</button>
+                    <button type="button" class="ft-chat-icon-btn" title="历史">🕐</button>
+                    <button type="button" class="ft-chat-icon-btn" title="声音">🔊</button>
+                    <button type="button" class="ft-chat-icon-btn" title="图片">🖼️</button>
+                    <button type="button" class="ft-chat-icon-btn" title="文件">📁</button>
+                    <button type="button" class="ft-chat-icon-btn" title="收藏">⭐</button>
+                </div>
+                <div class="ft-chat-textarea-wrap">
+                    <textarea id="ftChatText" placeholder="请在此输入文本或者粘贴QQ截图" autocomplete="off"></textarea>
+                    <button type="button" id="ftChatSendBtn">发 送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ft-popup ft-phone-popup" id="ftPhonePopup">
+        <div class="phone-title">全国服务热线</div>
+        <div class="phone-num">400-088-9001</div>
+        <div class="phone-divider">──────────</div>
+        <div class="phone-label">食品咨询热线</div>
+        <div class="phone-num">400-967-7001</div>
+    </div>
+
+    <div class="ft-popup ft-qr-popup" id="ftQrPopup">
+        <img src="images/wechat_qr.jpg" alt="微信二维码" class="qr-img">
+        <div class="qr-text">加微信咨询<small>扫码添加客服微信</small></div>
+    </div>
+
+    <script>
+    (function(){
+        function $(id){ return document.getElementById(id); }
+        var chatBtn=$('ftChatBtn'), phoneBtn=$('ftPhoneBtn'), qrBtn=$('ftQrBtn'), topBtn=$('ftTopBtn');
+        var chatPop=$('ftChatPopup'), phonePop=$('ftPhonePopup'), qrPop=$('ftQrPopup');
+        var allPops=[chatPop,phonePop,qrPop];
+        function closeAll(){ for(var i=0;i<allPops.length;i++) allPops[i].classList.remove('show'); }
+        function toggle(pop){ var isOpen=pop.classList.contains('show'); closeAll(); if(!isOpen) pop.classList.add('show'); }
+        if(chatBtn) chatBtn.addEventListener('click',function(e){e.stopPropagation();toggle(chatPop);});
+        if(phoneBtn) phoneBtn.addEventListener('click',function(e){e.stopPropagation();toggle(phonePop);});
+        if(qrBtn) qrBtn.addEventListener('click',function(e){e.stopPropagation();toggle(qrPop);});
+        if(topBtn) topBtn.addEventListener('click',function(e){e.stopPropagation();window.scrollTo({top:0,behavior:'smooth'});});
+         });
+        var closeBtns=document.querySelectorAll('.ft-popup-close');
+        for(var i=0;i<closeBtns.length;i++){ closeBtns[i].addEventListener('click',function(e){ e.stopPropagation(); var id=this.getAttribute('data-close'); if(id) $(id).classList.remove('show'); }); }
+
+        /* Chat send */
+        (function(){
+            var textEl=$('ftChatText'), sendBtn=$('ftChatSendBtn'), msgsEl=$('ftChatMsgs');
+            if(!textEl||!sendBtn||!msgsEl) return;
+            function nowTime(){ var d=new Date(); return (d.getHours()<10?'0':'')+d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes(); }
+            function addMsg(role,text){
+                var wrap=document.createElement('div'); wrap.className='ft-chat-msg-row ft-chat-msg-'+role;
+                wrap.innerHTML='<div class="ft-chat-bubble">'+text.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')+'</div><div class="ft-chat-meta">'+nowTime()+'</div>';
+                msgsEl.appendChild(wrap); msgsEl.scrollTop=msgsEl.scrollHeight;
+            }
+            sendBtn.addEventListener('click',function(){
+                var v=(textEl.value||'').trim(); if(!v)return;
+                addMsg('user',v); textEl.value='';
+                setTimeout(function(){ addMsg('agent','感谢您的留言，客服小崔稍后会回复您，请保持电话畅通，谢谢！'); },800);
+            });
+            textEl.addEventListener('keydown',function(e){ if(e.ctrlKey&&e.key==='Enter') sendBtn.click(); });
+        })();
+
+        /* Tab switching */
+        document.querySelectorAll('.category-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(function(t){t.classList.remove('active');});
+                this.classList.add('active');
+                var tabName=this.textContent.trim();
+                document.querySelectorAll('.image-grid').forEach(function(g){g.style.display='none';});
+                if(tabName==='质量验厂') document.getElementById('tab-quality').style.display='';
+                else if(tabName==='反恐验厂') document.getElementById('tab-security').style.display='';
+                else if(tabName==='食品安全验厂') document.getElementById('tab-food').style.display='';
+                else document.getElementById('tab-social').style.display='';
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
