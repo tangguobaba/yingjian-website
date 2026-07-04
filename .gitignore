@@ -1,0 +1,9 @@
+versions/
+.bak/
+ccas_*/
+screenshots*/
+backups/
+case/
+static/
+*.pyc
+*.zip
