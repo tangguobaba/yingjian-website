@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山东英检国际质量技术服务有限公司 - Yingjian International Quality Technology Service Co., Ltd.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* Top Bar */
+        .header-top-bar {
+            background: #444;
+            height: 28px;
+            line-height: 28px;
+            font-size: 12px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .header-top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-top-bar-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-top-bar-left .cn-name {
+            color: #fff;
+            margin-right: 15px;
+        }
+        .header-top-bar-left .en-name {
+            color: #bbb;
+        }
+        .header-top-bar-right a {
+            color: #ccc;
+            margin-left: 15px;
+        }
+        .header-top-bar-right a:hover {
+            color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            height: 100px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* 垂直居中 */
+            height: 100%;
+            padding-top: 19px;
+            gap: 60px;
+        }
+        .logo {
+            display: flex;
+            align-items: center; /* logo内容垂直居中 */
+            flex-shrink: 0;
+        }
+        .logo img {
+            height: 45px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .logo-text {
+            flex-shrink: 0;
+        }
+        .logo-text h1 {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+        .logo-text p {
+            font-size: 11px;
+            color: #333;
+            line-height: 1.3;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+        .header-center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 0;
+        }
+        .header-center .search-box {
+            margin-bottom: 6px;
+        }
+        .header-center .header-tags {
+            justify-content: center;
+        }
+        .header-right {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-box {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            overflow: hidden;
+        }
+        .search-box select {
+            width: 80px;
+            padding: 8px 5px;
+            border: none;
+            border-right: 1px solid #ddd;
+            outline: none;
+            font-size: 12px;
+            background: #fff;
+            cursor: pointer;
+        }
+        .search-box input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            font-size: 12px;
+        }
+        .search-box button {
+            padding: 8px 15px;
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .hotline {
+            text-align: right;
+            line-height: 1.4;
+        }
+        .hotline .phone {
+            font-size: 23px;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .hotline .food-line {
+            display: none;
+        }
+        .header-tags {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .header-tags span {
+            padding: 2px 6px;
+            font-size: 11px;
+            border-radius: 2px;
+            cursor: pointer;
+            background: #0066cc;
+            color: #fff;
+        }
+        .header-tags .tag-brc {
+            background: #0066cc;
+        }
+
+        /* Header Hot Search Tags */
+        .header-hot-tags {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 280px;
+        }
+        .header-hot-tags span {
+            background: #f0f7ff;
+            color: #0066cc;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .header-hot-tags span:hover {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        /* Search Hot Tags Row */
+        .search-hot-tags {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 8px;
+            padding: 8px 0;
+            border-top: 1px dashed #e5e5e5;
+        }
+        .search-hot-tags .label {
+            color: #999;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        .search-hot-tags a {
+            color: #666;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        .search-hot-tags a:hover {
+            color: #0066cc;
+        }
+
+        /* Floating Toolbar */
+        .floating-toolbar {
+            position: fixed;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            background: #003366;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,51,102,0.4);
+            overflow: hidden;
+        }
+        .floating-toolbar .toolbar-header {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 12px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .floating-toolbar .toolbar-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 10px 8px;
+        }
+        .floating-toolbar .tool-item {
+            width: 56px;
+            height: 56px;
+            background: #004489;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,68,137,0.3);
+        }
+        .floating-toolbar .tool-item:hover {
+            background: #0055aa;
+            transform: scale(1.05);
+        }
+        .floating-toolbar .tool-item svg {
+            width: 26px;
+            height: 26px;
+            fill: #fff;
+        }
+        .floating-toolbar .tool-item .tool-tip {
+            position: absolute;
+            right: 65px;
+            background: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .floating-toolbar .tool-item:hover .tool-tip {
+            opacity: 1;
+            visibility: visible;
+        }
+        .floating-toolbar .tool-item.qr-code .tool-tip {
+            padding: 10px;
+            background: #fff;
+        }
+        .floating-toolbar .tool-item.qr-code .tool-tip img {
+            width: 100px;
+            height: 100px;
+        }
+        .floating-toolbar .back-to-top {
+            background: #666;
+        }
+        .floating-toolbar .back-to-top:hover {
+            background: #555;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #004B87;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        .nav ul li {
+            position: relative;
+        }
+        .nav ul li a {
+            display: block;
+            padding: 10px 22px;
+            color: #fff;
+            font-size: 14px;
+            transition: background 0.3s;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .nav ul li a:hover {
+            background: #003d6b;
+        }
+        .nav ul li a.active {
+            background: #003366;
+        }
+
+        /* Banner */
+        .banner {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner-slider {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .banner-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .banner-slide.active {
+            opacity: 1;
+        }
+        .banner::before {
+            display: none;
+        }
+        /* Banner Content */
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+        .banner-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+        .banner-spacer {
+            height: 170px;
+            position: relative;
+        }
+        .banner-spacer::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            width: 1170px;
+            height: 4px;
+            background: #0066cc;
+        }
+        .banner-spacer-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 26px; /* 4px 蓝线 + 22px 间距 */
+            text-align: center;
+            font-size: 19px;
+            font-weight: 500;
+            color: #333;
+            font-family: 'Microsoft YaHei', 微软雅黑, sans-serif;
+            letter-spacing: 0.5px;
+            line-height: 1;
+            margin: 0;
+            z-index: 2;
+        }
+        .banner-spacer-title {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 65px; /* 4 + 22 + 19 + 20 */
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #0066cc;
+            font-family: 'Microsoft YaHei', 微软雅黑, sans-serif;
+            letter-spacing: 1px;
+            line-height: 1;
+            margin: 0;
+            z-index: 2;
+        }
+        .banner-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .banner-dot.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+        .banner-dot:hover {
+            background: rgba(255,255,255,0.8);
+        }
+        .banner-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .banner-content p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .banner-tags {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .banner-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        .section-title p {
+            color: #666;
+            font-size: 19px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #0066cc;
+            margin: 15px 0 0;
+        }
+
+        /* Service Process */
+        .service-process {
+            background: #f8f9fa;
+            padding-bottom: 60px;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .process-step {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            position: relative;
+            padding: 0 10px;
+        }
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 25px;
+            color: #0066cc;
+            font-size: 20px;
+        }
+        .process-step:last-child::after {
+            display: none;
+        }
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #003366, #002244);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #fff;
+            font-size: 24px;
+        }
+        .step-number {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        .step-name {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Hot Services Section */
+        .hot-services {
+            background: #fff;
+            padding: 60px 0;
+        }
+        .hot-services-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        .hot-services-left {
+            flex: 1;
+            padding-top: 0;
+            max-width: 326px;
+            max-height: 512px;
+        }
+        .hot-services-left h3 {
+            font-size: 22px;
+            color: #0066ff;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .hot-services-left p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .hot-services-btn {
+            margin-top: 25px;
+        }
+        .hot-services-btn a {
+            display: inline-block;
+            background: #0066cc;
+            color: #fff;
+            padding: 12px 40px;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .hot-services-btn a:hover {
+            background: #004489;
+        }
+        /* 企业定位样式 */
+        .hot-services-right {
+            flex: 1.5;
+            margin-top: 0;
+        }
+        .cert-columns-wrapper {
+            display: flex;
+            gap: 30px;
+        }
+        .cert-column {
+            flex: 1;
+        }
+        .cert-column-header {
+            font-size: 16px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .cert-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,102,204,0.15);
+            border-color: #0066cc;
+        }
+        .cert-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .cert-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .cert-desc {
+            font-size: 12px;
+            color: #888;
+        }
+        .cert-images-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .cert-image-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+        .cert-image-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,102,204,0.15);
+            border-color: #0066cc;
+        }
+        .cert-image-item img {
+            width: 262px;
+            height: 185px;
+            object-fit: cover;
+            display: block;
+        }
+        .cert-image-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            padding: 10px 5px;
+            background: #fff;
+        }
+        @media (max-width: 1024px) {
+            .cert-images-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .hot-services-content {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+            .hot-services-left {
+                text-align: left;
+                width: 100%;
+            }
+            .hot-services-right {
+                margin-top: 0 !important;
+                width: 100%;
+            }
+        }
+
+        /* Service Sections */
+        .services {
+            padding-bottom: 60px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+        .service-card-header {
+            background: linear-gradient(135deg, #0066cc, #004489);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .service-card-header h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .service-card-header p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        .service-card-body ul {
+            padding: 15px;
+        }
+        .service-card-body li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .service-card-body li:last-child {
+            border-bottom: none;
+        }
+        .service-card-body li::before {
+            content: '✓';
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        /* Company Introduction */
+        .about-company {
+            background: linear-gradient(135deg, #0066cc 0%, #004489 100%);
+            color: #fff;
+            padding: 60px 0;
+        }
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        .about-stats {
+            display: flex;
+            gap: 40px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+
+        /* Customer Cases */
+        .customer-cases {
+            padding-bottom: 60px;
+        }
+        .cases-wrapper {
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+        }
+        .cases-gallery {
+            flex: 1.2;
+        }
+        .main-image {
+            width: 500px;
+            height: 360px;
+            background: linear-gradient(135deg, #e8e8e8, #f5f5f5);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .thumbnail-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            position: relative;
+            padding: 0 35px;
+        }
+        .thumbnail-row img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .thumbnail-row img:hover,
+        .thumbnail-row img.active {
+            opacity: 1;
+            border-color: #0066cc;
+        }
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            z-index: 10;
+        }
+        .gallery-nav.prev {
+            left: 0;
+        }
+        .gallery-nav.next {
+            right: 0;
+        }
+        .gallery-nav:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .cases-list {
+            flex: 1;
+            max-height: 420px;
+            overflow-y: auto;
+        }
+        .cases-list h3 {
+ display: none;
+ }
+        .case-item {
+            padding: 15px;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 1px solid #eee;
+        }
+        .case-item:hover,
+        .case-item.active {
+            background: #f0f7ff;
+            border-left-color: #0066cc;
+        }
+        .case-item.active {
+            background: #e6f0ff;
+        }
+        .case-item h4 {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        .case-item.active h4 {
+            color: #0066cc;
+        }
+        .case-item .date {
+            font-size: 13px;
+            color: #999;
+            text-align: right;
+        }
+        .case-item-wrapper {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .case-item-pic {
+            width: 80px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .case-item-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .case-item-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+        .case-item-thumb img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .case-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .case-item-desc {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+            margin-top: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .case-item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+        .case-item-views {
+            font-size: 12px;
+            color: #999;
+        }
+        .case-item-views i {
+            margin-right: 4px;
+        }
+
+        /* Customer Cases Title - 原站样式 */
+        .customer-cases-title h2 {
+            font-family: Microsoft YaHei;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        /* Service Promises */
+        .promises {
+            background: #f8f9fa;
+            padding-bottom: 60px;
+        }
+        .promises-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        .promise-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .promise-card:hover {
+            transform: translateY(-3px);
+        }
+        .promise-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0066cc, #004489);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #fff;
+            font-size: 28px;
+        }
+        .promise-card h4 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .promise-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+        }
+        .footer-about h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .footer-about p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+        .footer-links h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        .footer-links ul li a {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .footer-links ul li a:hover {
+            color: #0066cc;
+        }
+        .footer-contact p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+        .footer-contact .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .footer-contact .contact-label {
+            color: #666;
+            min-width: 60px;
+        }
+        .footer-bottom {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p {
+            font-size: 13px;
+            color: #666;
+        }
+        .footer-qr {
+            text-align: center;
+        }
+        .footer-qr img {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .footer-qr p {
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        /* Header Responsive - for narrow screens (side-by-side browsers) */
+        @media (max-width: 1200px) {
+            .header-content {
+                gap: 30px;
+                padding-top: 10px;
+            }
+            .nav ul {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            .nav ul li a {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+            .logo img {
+                height: 38px;
+            }
+            .logo-text h1 {
+                font-size: 16px;
+            }
+            .logo-text p {
+                font-size: 10px;
+            }
+            .search-box input {
+                width: 160px;
+            }
+            .search-box select {
+                width: 70px;
+            }
+            .hotline .phone {
+                font-size: 18px;
+            }
+            .header-center .search-box {
+                margin-bottom: 4px;
+            }
+            .header-center {
+                gap: 5px;
+            }
+        }
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .promises-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-wrap: wrap;
+            }
+            .nav ul li a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            .banner {
+                height: 300px;
+            }
+            .banner-content h2 {
+                font-size: 28px;
+            }
+            .process-steps {
+                flex-wrap: wrap;
+            }
+            .process-step {
+                width: 25%;
+            }
+            .process-step::after {
+                display: none;
+            }
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .about-stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="header-top-bar" style="display:none;">
+        <div class="container">
+            <div class="header-top-bar-content">
+                <div class="header-top-bar-left">
+                    <span class="cn-name">山东英检国际质量技术服务有限公司</span>
+                    <span class="en-name">Yingjian International Quality Technology Service Co., Ltd.</span>
+                </div>
+                <div class="header-top-bar-right">
+                    <a href="#">集团联系目录</a>
+                    <a href="#">网站地图</a>
+                    <a href="#">加入收藏</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/yingjian-logo.png" alt="英检logo" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <h1>山东英检国际质量技术服务有限公司</h1>
+                        <p>Yingjian International Quality Technology Service Co., Ltd.</p>
+                    </div>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <select>
+                            <option>文章</option>
+                        </select>
+                        <input type="text" placeholder="搜索服务项目...">
+                        <button>搜索</button>
+                    </div>
+                    <div class="header-tags">
+                        <span class="tag-fsc">FSC</span>
+                        <span class="tag-smeta">SMETA</span>
+                        <span class="tag-fda">FDA</span>
+                        <span class="tag-grs">GRS</span>
+                        <span class="tag-brc">BRC</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="hotline">
+                        <p class="phone">客服热线：400-088-9001</p>
+                        <p class="food-line">食品热线：400-967-7001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">网站首页</a></li>
+                <li><a href="#">验厂咨询</a></li>
+                <li><a href="#">食品咨询</a></li>
+                <li><a href="#">认证咨询</a></li>
+                <li><a href="#">绿色供应链</a></li>
+                <li><a href="#">客户案例</a></li>
+                <li><a href="#">专家团队</a></li>
+                <li><a href="#">资源合作</a></li>
+                <li><a href="#">关于英检</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-slider">
+            <div class="banner-slide active" style="background-image: url('images/banner_fsc.jpg');"></div>
+            <div class="banner-slide" style="background-image: url('images/banner_smeta.jpg');"></div>
+            <div class="banner-slide" style="background-image: url('images/banner_grs.jpg');"></div>
+            <div class="banner-slide" style="background-image: url('images/banner_qiye.jpg');"></div>
+        </div>
+        <div class="banner-content">
+            <h2>专业验厂认证咨询机构</h2>
+            <p>国内成立较早的规模较大的验厂服务机构，专业更值得信赖！</p>
+            <p>年服务上千家客户，顾问师均来自SGS、TUV、ITS、BV、BSI、DNV等国际知名认证机构</p>
+            <div class="banner-tags">
+                <span class="banner-tag">SMETA验厂</span>
+                <span class="banner-tag">BRCGS认证</span>
+                <span class="banner-tag">FSC森林认证</span>
+                <span class="banner-tag">FDA注册</span>
+                <span class="banner-tag">GRS认证</span>
+                <span class="banner-tag">FSSC22000</span>
+            </div>
+        </div>
+        <div class="banner-dots">
+            <span class="banner-dot active" data-index="0"></span>
+            <span class="banner-dot" data-index="1"></span>
+            <span class="banner-dot" data-index="2"></span>
+            <span class="banner-dot" data-index="3"></span>
+        </div>
+    </section>
+
+    <div class="banner-spacer">
+        <div class="banner-spacer-title">热门服务项目</div>
+        <div class="banner-spacer-text">专业、诚信、权威一您值得信赖的认证咨询伙伴</div>
+    </div>
+
+    <!-- 热门服务项目 -->
+    <section class="hot-services">
+        <div class="container">
+            <div class="hot-services-content">
+                <div class="hot-services-left">
+                    <h3>专注权威认证咨询</h3>
+                    <p>英检国际是国内成立较早的，严格按照国家行政许可制度，专业从事现代企业管理研究和国际标准认证咨询的顾问机构，现为中国贸促会管理咨询与培训委员会，副会长单位。英检每年服务上千家客户，服务客户涉及目前所有的常规行业。同时拥有丰富的验厂认证咨询经验和专业的顾问导师，我们的顾问师均来自于 SGS、TUV、ITS、BV、BSI、DNV等全球知名的第三方认证机构。</p>
+                    <p>我们的业务范围包括：体系咨询、企业管理咨询、验厂咨询、供应链管理服务、质检技术服务、信息咨询、软件开发、销售。</p>
+                    <p class="highlight">金牌服务：验厂咨询辅导、BRC认证、FSSC22000认证、美国FDA注册、FDA验厂辅导、HALAL/KOSHER认证等。</p>
+                    <div class="hot-services-btn">
+                        <a href="#">咨询更多服务</a>
+                    </div>
+                </div>
+                <div class="hot-services-right">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab(1)">验厂咨询</button>
+                        <button class="tab-btn" onclick="switchTab(2)">认证咨询</button>
+                        <button class="tab-btn" onclick="switchTab(3)">食品认证咨询</button>
+                    </div>
+                    <!-- Tab 1: 验厂咨询 -->
+                    <div class="cert-tab-content active" id="tab1">
+                        <div class="cert-images-grid">
+                            <div class="cert-image-item">
+                                <img src="images/competence/smeta.png" alt="SMETA验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/sedex.png" alt="SEDEX验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/bsci.png" alt="BSCI验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/slcp.png" alt="SLCP验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/walmart.png" alt="Walmart验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/disney.png" alt="Disney验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/wca.png" alt="WCA验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/scan.png" alt="SCAN验厂">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/costco.png" alt="Costco验厂">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab 2: 认证咨询 -->
+                    <div class="cert-tab-content" id="tab2">
+                        <div class="cert-images-grid">
+                            <div class="cert-image-item">
+                                <img src="images/competence/grs.png" alt="GRS认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/fsc.png" alt="FSC认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/flax.png" alt="FLAX认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/rcs.png" alt="RCS认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/ocs.png" alt="OCS认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/aeo.png" alt="AEO认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/rds.png" alt="RDS认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/iso13485.png" alt="ISO13485认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/eudr.png" alt="EUDR认证">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab 3: 食品认证咨询 -->
+                    <div class="cert-tab-content" id="tab3">
+                        <div class="cert-images-grid">
+                            <div class="cert-image-item">
+                                <img src="images/competence/brcgs.png" alt="BRCGS认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/fssc22000.png" alt="FSSC22000认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/fsvp.png" alt="FSVP认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/bap.png" alt="BAP认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/halal.png" alt="HALAL认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/fsma.png" alt="FSMA认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/globalgap.png" alt="GLOBALG.A.P认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/ifs.png" alt="IFS认证">
+                            </div>
+                            <div class="cert-image-item">
+                                <img src="images/competence/fda.png" alt="US FDA认证">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Tab Buttons - 原站样式 */
+        .hot-services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .tab-buttons {
+            display: flex;
+            gap: 0;
+            margin-top: 0;
+            flex-shrink: 0;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 0;
+            font-size: 19px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fff;
+            color: #999;
+            border-bottom: 2px solid transparent;
+            text-align: center;
+        }
+        .tab-btn:first-child {
+            margin-left: 0;
+        }
+        .tab-btn:hover {
+            color: #dd0000;
+        }
+        .tab-btn.active {
+            background: #fff;
+            color: #dd0000;
+            font-weight: bold;
+            border-bottom: 2px solid #dd0000;
+        }
+        /* Tab Content */
+        .cert-tab-content {
+            display: none;
+        }
+        .cert-tab-content.active {
+            display: block;
+        }
+        .cert-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+        function switchTab(tabIndex) {
+            // Remove active from all tab buttons
+            var tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            // Add active to clicked button
+            tabBtns[tabIndex - 1].classList.add('active');
+
+            // Hide all tab contents
+            var tabContents = document.querySelectorAll('.cert-tab-content');
+            tabContents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            // Show selected tab content
+            document.getElementById('tab' + tabIndex).classList.add('active');
+        }
+    </script>
+
+    <!-- Customer Cases -->
+    <section class="customer-cases">
+        <div class="container">
+            <div class="section-title customer-cases-title">
+                <h2>客户案例</h2>
+                <p>2000+知名企业的选择，源自对英检的信赖</p>
+            </div>
+            <div class="cases-wrapper">
+                <div class="cases-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="images/case1.jpg" alt="案例主图">
+                    </div>
+                </div>
+                <div class="cases-list">
+ <div class="case-item active" data-img="images/case1.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+<div class="case-item-thumb">
+<img src="images/case1.jpg" alt="验厂">
+</div>
+<div class="case-item-content">
+            <h4>正大食品企业（秦皇岛）有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">正大食品企业（秦皇岛）有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2021-03-17</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case2.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>辽宁**有机农业科技有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">辽宁**有机农业科技有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2026-06-08</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case3.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>青岛某某礼品有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">青岛某某礼品有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2026-06-04</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case4.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>莒县一食品有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">莒县一食品有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2026-06-01</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case1.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>广州市***食品有限责任公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">广州市***食品有限责任公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2025-05-29</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case2.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>辽宁**农联农业发展有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">辽宁**农联农业发展有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2025-05-25</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case3.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>山东某食品有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">山东某食品有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2025-05-20</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case4.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>青岛某某有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">青岛某某有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2025-05-18</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="case-item" data-img="images/case1.jpg" onclick="selectCase(this)">
+ <div class="case-item-wrapper">
+ <div class="case-item-thumb">
+ <img src="images/case1.jpg" alt="验厂">
+ </div>
+ <div class="case-item-content">
+ <h4>青岛某某有限公司与英检签署管理培训合同</h4>
+ <p class="case-item-desc">青岛某某有限公司与英检签署管理培训合同，由英检为其提供管理培训服务。</p>
+ <div class="case-item-meta">
+ <span class="case-item-views"><i>👁</i>240浏览</span>
+ <span class="date">2025-05-14</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="service-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>服务流程</h2>
+                <p>8步标准化服务流程，确保服务质量与效率</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">1</div>
+                    <div class="step-number">STEP 01</div>
+                    <div class="step-name">签署合同</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">2</div>
+                    <div class="step-number">STEP 02</div>
+                    <div class="step-name">现场差距分析</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">3</div>
+                    <div class="step-number">STEP 03</div>
+                    <div class="step-name">现场改善</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">4</div>
+                    <div class="step-number">STEP 04</div>
+                    <div class="step-name">体系建立</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">5</div>
+                    <div class="step-number">STEP 05</div>
+                    <div class="step-name">模拟审核</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">6</div>
+                    <div class="step-number">STEP 06</div>
+                    <div class="step-name">陪同审核</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">7</div>
+                    <div class="step-number">STEP 07</div>
+                    <div class="step-name">提交整改</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">8</div>
+                    <div class="step-number">STEP 08</div>
+                    <div class="step-name">售后服务</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function switchImage(thumb, src) {
+        document.getElementById('mainImage').src = src;
+        document.querySelectorAll('.thumbnail-row img').forEach(function(img) {
+            img.classList.remove('active');
+        });
+        thumb.classList.add('active');
+    }
+    function selectCase(el) {
+        document.querySelectorAll('.case-item').forEach(function(item) {
+            item.classList.remove('active');
+        });
+        el.classList.add('active');
+        var img = el.getAttribute('data-img');
+        document.getElementById('mainImage').src = img;
+        document.querySelectorAll('.thumbnail-row img').forEach(function(thumb) {
+            thumb.classList.remove('active');
+            if (thumb.src.indexOf(img.replace('images/', '')) > -1) {
+                thumb.classList.add('active');
+            }
+        });
+    }
+    function scrollThumbnails(dir) {
+        var container = document.querySelector('.thumbnail-row');
+        var scrollAmount = 90;
+        container.scrollLeft += dir * scrollAmount;
+    }
+    // Auto-scroll main image every 3 seconds (boss #3)
+    (function() {
+        const mainImageSources = [
+            'images/case1.jpg',
+            'images/case2.jpg',
+            'images/case3.jpg',
+            'images/case4.jpg'
+        ];
+        let mainImageIndex = 0;
+        setInterval(function() {
+            mainImageIndex = (mainImageIndex + 1) % mainImageSources.length;
+            const img = document.getElementById('mainImage');
+            if (img) img.src = mainImageSources[mainImageIndex];
+        }, 3000);
+    })();
+    </script>
+
+    <!-- Service Sections -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>热门服务项目</h2>
+                <p>四大服务板块，全方位满足企业认证需求</p>
+            </div>
+            <div class="service-grid">
+                <!-- 验厂咨询 -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h3>验厂咨询</h3>
+                        <p>Factory Audit Consulting</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul>
+                            <li>SMETA验厂</li>
+                            <li>SEDEX验厂</li>
+                            <li>BSCI验厂</li>
+                            <li>SLCP验厂</li>
+                            <li>Walmart验厂</li>
+                            <li>Disney验厂</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 食品认证 -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h3>食品认证咨询</h3>
+                        <p>Food Certification Consulting</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul>
+                            <li>美国FDA注册</li>
+                            <li>FSVP认证</li>
+                            <li>FSMA认证</li>
+                            <li>BRCGS认证</li>
+                            <li>FSSC22000认证</li>
+                            <li>GLOBALG.A.P</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 认证咨询 -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h3>认证咨询</h3>
+                        <p>Certification Consulting</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul>
+                            <li>FSC森林认证</li>
+                            <li>GRS全球回收标准</li>
+                            <li>RCS回收声明标准</li>
+                            <li>OCS有机含量标准</li>
+                            <li>ISO13485认证</li>
+                            <li>AEO海关认证</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 绿色供应链 -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h3>绿色供应链</h3>
+                        <p>Green Supply Chain</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul>
+                            <li>绿色供应链管理</li>
+                            <li>碳足迹评估</li>
+                            <li>环保合规咨询</li>
+                            <li>可持续发展培训</li>
+                            <li>供应商评估</li>
+                            <li>合规性审核</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section class="about-company">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于英检</h2>
+                    <p>山东英检国际质量技术服务有限公司是国内成立较早的、严格按照国家行政许可制度注册的专业从事现代企业管理研究和国际标准认证咨询的顾问机构。公司每年服务上千家客户，服务客户涉及所有常规行业。</p>
+                    <p>公司拥有丰富的验厂认证咨询经验和专业的顾问导师团队，顾问师均来自于SGS、TUV、ITS、BV、BSI、DNV等全球知名第三方认证机构。我们的业务范围包括：体系咨询、企业管理咨询、验厂咨询、供应链管理服务、质检技术服务、信息咨询、软件开发及销售。</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2000+</span>
+                        <span class="stat-label">知名企业选择</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">年服务客户</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">年行业经验</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Promises -->
+    <section class="promises">
+        <div class="container">
+            <div class="section-title">
+                <h2>八大服务承诺</h2>
+                <p>为您保驾护航，全程专业保障</p>
+            </div>
+            <div class="promises-grid">
+                <div class="promise-card">
+                    <div class="promise-icon">★</div>
+                    <h4>增值承诺</h4>
+                    <p>提供增值服务，确保企业受益</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">¥</div>
+                    <h4>预算承诺</h4>
+                    <p>精准预算为您省钱，不增加任何额外费用</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">✓</div>
+                    <h4>结果承诺</h4>
+                    <p>专业辅导实力保障，给您一份客户满意的审核结果</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">⏱</div>
+                    <h4>时限承诺</h4>
+                    <p>确保在约定时间到达现场，让服务时刻在您身边</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">☎</div>
+                    <h4>过程承诺</h4>
+                    <p>整个服务过程，客服一对一全程保障服务品质</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">⚖</div>
+                    <h4>合规承诺</h4>
+                    <p>商业行为符合法律和高道德标准</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">🔒</div>
+                    <h4>保密承诺</h4>
+                    <p>不向任何第三方组织及个人泄漏客户商业信息</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-icon">24</div>
+                    <h4>售后承诺</h4>
+                    <p>24小时客服在线，随时解答您的疑问</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <h3>山东英检国际质量技术服务有限公司</h3>
+                    <p>国内成立较早的规模较大的验厂服务机构，专业从事现代企业管理研究和国际标准认证咨询的顾问机构，拥有丰富的行业经验和专业的顾问导师团队。</p>
+                    <p style="margin-top:10px;">服务热线：400-088-9001 / 400-967-7001</p>
+                </div>
+                <div class="footer-links">
+                    <h4>关于英检</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">专家团队</a></li>
+                        <li><a href="#">服务流程</a></li>
+                        <li><a href="#">服务承诺</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">验厂咨询</a></li>
+                        <li><a href="#">食品咨询</a></li>
+                        <li><a href="#">体系咨询</a></li>
+                        <li><a href="#">绿色供应链</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>热门服务</h4>
+                    <ul>
+                        <li><a href="#">SMETA验厂</a></li>
+                        <li><a href="#">FSC森林认证</a></li>
+                        <li><a href="#">GRS认证</a></li>
+                        <li><a href="#">BRCGS认证</a></li>
+                        <li><a href="#">FDA食品注册</a></li>
+                    </ul>
+                </div>
+                <div class="footer-qr">
+                    <img src="images/29833053.png" alt="二维码" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23ddd%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2212%22>二维码</text></svg>'">
+                    <p>扫一扫，专业老师为您答疑</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>版权所有© 2026 山东英检国际质量技术服务有限公司 | 技术支持：英检技术部</p>
+                <p>服务时间：周一至周五 9:00-18:00</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating Toolbar -->
+    <div class="floating-toolbar">
+        <div class="toolbar-header">在线咨询</div>
+        <div class="toolbar-buttons">
+            <div class="tool-item online-consult">
+                <span class="tool-tip">在线咨询</span>
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            </div>
+            <div class="tool-item phone-consult">
+                <span class="tool-tip">400-088-9001</span>
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="tool-item qr-code">
+                <span class="tool-tip"><img src="images/29833053.png" alt="二维码"></span>
+                <svg viewBox="0 0 24 24"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm8-6v2h2V5h-2zm0 4v2h2v-2h-2zm2 4v2h2v-2h-2zm0-4v2h2v-2h-2z"/></svg>
+            </div>
+            <div class="tool-item back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                <span class="tool-tip">回到顶部</span>
+                <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var slides = document.querySelectorAll('.banner-slide');
+        var dots = document.querySelectorAll('.banner-dot');
+        var currentIndex = 0;
+        var interval;
+
+        function goToSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            currentIndex = index;
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            var next = (currentIndex + 1) % slides.length;
+            goToSlide(next);
+        }
+
+        function startAutoPlay() {
+            interval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(interval);
+        }
+
+        dots.forEach(function(dot, index) {
+            dot.addEventListener('click', function() {
+                stopAutoPlay();
+                goToSlide(index);
+                startAutoPlay();
+            });
+        });
+
+        startAutoPlay();
+    })();
+    </script>
+</body>
+</html>
