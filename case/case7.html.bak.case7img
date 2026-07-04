@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山东鲁一食品股份有限公司 - 案例详情</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background: #f5f7fa;
+    line-height: 1.8;
+  }
+  .case-detail-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .case-header { border-bottom: 2px solid #0066cc; padding-bottom: 20px; margin-bottom: 28px; }
+  .case-header h1 { font-size: 24px; color: #1a1a1a; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+  .case-header .case-date { color: #888; font-size: 14px; letter-spacing: 0.5px; }
+  .case-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; margin-bottom: 32px; background: #eee; }
+  .case-content h2 { font-size: 20px; color: #0066cc; border-left: 4px solid #0066cc; padding-left: 12px; margin: 28px 0 14px; }
+  .case-content p { font-size: 15.5px; color: #444; margin-bottom: 14px; text-indent: 2em; text-align: justify; }
+  .case-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; text-align: center; }
+  .back-link { display: inline-block; padding: 10px 28px; background: #0066cc; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; transition: background 0.3s; }
+  .back-link:hover { background: #004f9e; }
+  .case-tags { margin-top: 18px; color: #999; font-size: 13px; }
+  .case-tags span { display: inline-block; padding: 2px 10px; background: #f0f7ff; color: #0066cc; border-radius: 12px; margin: 0 4px; }
+</style>
+</head>
+<body>
+  <div class="case-detail-wrap">
+    <div class="case-header">
+      <h1>山东鲁一食品股份有限公司与华认联国际签署管理培训合同</h1>
+      <div class="case-date">签约日期：2025-05-20</div>
+    </div>
+
+    <img class="case-cover" src="../images/case3.jpg" alt="山东鲁一食品股份有限公司">
+
+    <div class="case-content">
+      <h2>案例介绍</h2>
+
+      <p><strong>【客户背景】</strong>山东鲁一食品股份有限公司位于山东聊城，是鲁西地区主营速冻调理食品、米面制品的龙头企业，产品覆盖商超、餐饮、电商三大渠道。公司年产值 2.5 亿元，拥有标准化生产车间 4 座、员工 400 余人。随着餐饮端预制菜需求的爆发，企业订单结构从"大单品、长周期"转向"小批量、多频次"，原有"以产定销"的排产模式与僵化的部门响应机制已严重制约交付能力，管理层下定决心通过系统管理培训重塑组织能力。</p>
+
+      <p><strong>【培训需求】</strong>企业方提出的培训目标非常务实：一是搭建"客户订单驱动生产计划"的拉动式排产机制，将订单交付准时率提升至 95% 以上；二是打通销售、生产、仓储、物流四部门的信息流，建立日清日结的订单看板；三是针对一线班组长开展"现场管理者基本功"训练，使其具备"看数据、管异常、带团队"的三项核心能力。公司明确，本次合作不接受通用课程，必须以企业真实业务场景为案例。</p>
+
+      <p><strong>【服务过程】</strong>华认联国际项目组由速冻食品行业顾问 + 精益生产专家组成，采用"现状写实—方案共创—试点突破—全面推广"四阶段方法。前 2 周驻厂完成订单全流程的写实分析，识别出 17 个关键堵点；中间 3 周与销售、生产、仓储负责人共创"拉动式排产方案"与"订单日清看板"；试点阶段选取调理品车间作为样板，运行 4 周并迭代 2 版方案；推广阶段将成熟方案复制到全部 4 个车间，并对 80 余名班组长进行"看数据+管异常+带团队"三模块轮训。项目共开展专题研讨 12 场、车间现场辅导 28 次、班组长集训 6 场。</p>
+
+      <p><strong>【服务成果】</strong>项目交付 4 个月后成效：订单准时交付率从 73% 提升至 96%；订单平均交付周期由 4.8 天缩短至 2.9 天；车间异常响应时间由平均 45 分钟缩短至 12 分钟；2025 年下半年成功承接某全国连锁餐饮品牌年度战略订单，新增年订单额约 3500 万元。生产副总评价："华认联的老师下车间比我们自己的员工还勤快，给的工具我们一线真能直接用。"</p>
+
+      <div class="case-tags">
+        <span>速冻调理</span><span>拉动式排产</span><span>看板管理</span><span>班组长赋能</span>
+      </div>
+    </div>
+
+    <div class="case-footer">
+      <a class="back-link" href="../index_0701.html" target="_blank">← 返回客户案例</a>
+    </div>
+  </div>
+</body>
+</html>
