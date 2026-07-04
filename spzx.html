@@ -95,38 +95,10 @@
         .ft-popup.show { opacity: 1; visibility: visible; transform: translateX(0); }
         .ft-popup-close { position: absolute; top: 6px; right: 8px; width: 22px; height: 22px; background: #ff4d4f; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; cursor: pointer; line-height: 1; }
         .ft-popup-title { padding: 12px 15px; font-size: 14px; font-weight: bold; color: #003366; border-bottom: 1px solid #eee; }
-        .ft-popup-body { padding: 15px; }
-        .ft-chat-popup { width: 340px; height: 460px; display: flex; flex-direction: column; top: 50%; transform: translateY(-50%); }
-        .ft-chat-popup.show { transform: translateY(-50%); }
-        .ft-chat-header { display: flex; align-items: center; padding: 10px 12px; background: #0066cc; color: #fff; border-radius: 10px 10px 0 0; gap: 8px; }
-        .ft-chat-header-left { flex-shrink: 0; }
-        .ft-chat-logo img { width: 36px; height: 36px; border-radius: 4px; }
-        .ft-chat-header-title { flex: 1; font-size: 14px; font-weight: bold; }
-        .ft-chat-header-right { flex-shrink: 0; }
-        .ft-chat-body { flex: 1; overflow-y: auto; padding: 10px; background: #f0f4f8; }
-        .ft-chat-msg { margin-bottom: 10px; font-size: 13px; line-height: 1.5; }
-        .ft-chat-msg-system { background: #fff3cd; color: #856404; padding: 8px 10px; border-radius: 6px; }
-        .ft-chat-msg-user { text-align: right; }
-        .ft-chat-msg-user .ft-chat-bubble { background: #0066cc; color: #fff; display: inline-block; padding: 6px 10px; border-radius: 12px 12px 0 12px; text-align: left; max-width: 85%; }
-        .ft-chat-msg-agent .ft-chat-bubble { background: #fff; color: #333; display: inline-block; padding: 6px 10px; border-radius: 12px 12px 12px 0; }
-        .ft-chat-meta { font-size: 11px; color: #999; margin-top: 3px; }
-        .ft-chat-input { border-top: 1px solid #e0e6ed; background: #fff; padding: 8px; }
-        .ft-chat-callback { display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #fff; border-top: 1px solid #e0e6ed; margin-bottom: 4px; }
-        .ft-chat-callback input { flex: 1; padding: 5px 10px; border: 1px solid #cce0f5; border-radius: 4px; font-size: 12px; outline: none; background: #eaf3fc; min-width: 0; }
-        .ft-chat-callback-btn { padding: 5px 10px; background: #1e6bd6; color: #fff; border: none; border-radius: 4px; font-size: 12px; cursor: pointer; white-space: nowrap; }
-        .ft-chat-input-main { position: relative; }
-        .ft-chat-icons { display: flex; gap: 4px; padding: 4px 0; }
-        .ft-chat-icon-btn { background: none; border: none; cursor: pointer; font-size: 16px; line-height: 1; padding: 2px 4px; }
-        .ft-chat-textarea-wrap { position: relative; }
-        .ft-chat-textarea-wrap textarea { width: 100%; height: 60px; padding: 6px 60px 6px 10px; border: 1px solid #cce0f5; border-radius: 4px; font-size: 12px; font-family: inherit; line-height: 1.5; resize: none; outline: none; background: #eaf3fc; box-sizing: border-box; word-wrap: break-word; }
-        .ft-chat-textarea-wrap textarea:focus { border-color: #1e6bd6; }
-        .ft-chat-send-btn { position: absolute; right: 8px; bottom: 8px; padding: 4px 10px; background: #1e6bd6; color: #fff; border: none; border-radius: 4px; font-size: 12px; cursor: pointer; }
-
-        .ft-chat-hint { font-size: 14px; color: #333; line-height: 1.8; text-align: center; padding: 10px 0; }
+        .ft-popup-body {
         .ft-phone-popup { width: 240px; padding: 15px; text-align: center; }
         .ft-qr-popup { width: 180px; padding: 10px; text-align: center; }
         .ft-qr-popup .qr-img { width: 160px; height: auto; border-radius: 6px; }
-        .ft-chat-header-right { position: absolute; top: 8px; right: 8px; }
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 300px);
@@ -197,7 +169,7 @@ var _hmt = _hmt || [];
 })();
 </script>
 </head>
-<body onload="setTimeout(function(){var p=document.getElementById('ftChatPopup');if(p)p.classList.add('show')},500)">
+<body>
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -387,31 +359,13 @@ var _hmt = _hmt || [];
         </div>
     </div>
 
-    <div class="ft-popup ft-chat-popup" id="ftChatPopup">
-        <div class="ft-chat-header">
-            <div class="ft-chat-header-left"><div class="ft-chat-logo"><img src="images/yingjian-logo.png" alt="英检logo"></div></div>
-            <div class="ft-chat-header-title">客服--小崔</div>
-            <div class="ft-chat-header-right"><span class="ft-popup-close ft-chat-win-close" data-close="ftChatPopup" title="关闭">×</span></div>
+            
+        
+            
         </div>
-        <div class="ft-chat-body">
-            <div class="ft-chat-msg ft-chat-msg-system">[系统提示] 您好，我是人工客服小崔，您有什么需要咨询的可以联系我，电话<strong>15265272850</strong>（微信同号），谢谢！</div>
-            <div class="ft-chat-msgs" id="ftChatMsgs"></div>
-        </div>
-        <div class="ft-chat-input">
-            <div class="ft-chat-callback"><input type="text" placeholder="请输入手机号码" maxlength="11"><button type="button" class="ft-chat-callback-btn">给我回电</button></div>
-            <div class="ft-chat-input-main">
-                <div class="ft-chat-icons">
-                    <button type="button" class="ft-chat-icon-btn" title="表情">😀</button>
-                    <button type="button" class="ft-chat-icon-btn" title="历史">🕐</button>
-                    <button type="button" class="ft-chat-icon-btn" title="声音">🔊</button>
-                    <button type="button" class="ft-chat-icon-btn" title="图片">🖼️</button>
-                    <button type="button" class="ft-chat-icon-btn" title="文件">📁</button>
-                    <button type="button" class="ft-chat-icon-btn" title="收藏">⭐</button>
-                </div>
-                <div class="ft-chat-textarea-wrap">
-                    <textarea id="ftChatText" placeholder="请在此输入文本或者粘贴QQ截图" autocomplete="off"></textarea>
-                    <button type="button" id="ftChatSendBtn">发 送</button>
-                </div>
+        
+            
+                
             </div>
         </div>
     </div>
