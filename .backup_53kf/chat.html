@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线咨询 - 山东英检国际质量技术服务有限公司</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Microsoft YaHei","PingFang SC",Arial,sans-serif; color: #333; height: 100vh; overflow: hidden; }
+
+        /* 全屏布局 */
+        .chat-page { display: flex; height: 100vh; }
+
+        /* 左侧栏 */
+        .chat-left { width: 300px; background: #1a5c9e; color: #fff; display: flex; flex-direction: column; padding: 20px; flex-shrink: 0; }
+
+        /* 左侧顶部 */
+        .left-top { display: flex; align-items: center; margin-bottom: 20px; }
+        .left-logo { font-size: 28px; font-weight: bold; color: #fff; margin-right: 8px; }
+        .left-logo-sub { font-size: 13px; color: #c5dfff; line-height: 1.3; }
+
+        /* CCAS标志 */
+        .left-ccas { background: #fff; border-radius: 8px; padding: 10px 14px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .ccas-badge { background: #0066cc; color: #fff; font-size: 16px; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
+        .ccas-name { font-size: 14px; color: #333; font-weight: bold; }
+
+        /* 服务菜单 */
+        .left-menu { margin-bottom: 20px; }
+        .menu-title { color: #ffc56e; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
+        .menu-item { color: #fff; font-size: 13px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .menu-item:last-child { border-bottom: none; }
+
+        /* 优势列表 */
+        .left-features { margin-bottom: 20px; }
+        .features-title { color: #8ec4ff; font-size: 13px; margin-bottom: 8px; }
+        .feature-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #c5dfff; padding: 3px 0; }
+        .feature-dot { width: 5px; height: 5px; background: #8ec4ff; border-radius: 50%; flex-shrink: 0; }
+
+        /* 热线 */
+        .left-hotline { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; margin-bottom: 15px; }
+        .hotline-label { font-size: 12px; color: #c5dfff; margin-bottom: 4px; }
+        .hotline-num { font-size: 22px; color: #ff6; font-weight: bold; letter-spacing: 1px; }
+
+        /* 二维码 */
+        .left-qr { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; text-align: center; }
+        .qr-box { width: 100px; height: 100px; background: #fff; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .qr-box img { max-width: 100%; max-height: 100%; }
+        .qr-text { font-size: 11px; color: #c5dfff; }
+        .qr-phone { font-size: 11px; color: #fff; margin-top: 4px; }
+
+        /* 右区 */
+        .chat-right { flex: 1; display: flex; flex-direction: column; background: #f0f2f5; }
+
+        /* 顶部栏 */
+        .chat-header { background: #fff; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid #e0e0e0; flex-shrink: 0; }
+        .chat-header-title { display: flex; align-items: center; gap: 10px; }
+        .chat-header-icon { width: 32px; height: 32px; background: #1a5c9e; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .chat-header-icon svg { width: 18px; height: 18px; fill: #fff; }
+        .chat-header-text { font-size: 15px; color: #333; font-weight: bold; }
+        .chat-end-btn { background: #e74c3c; color: #fff; border: none; padding: 6px 16px; border-radius: 4px; font-size: 13px; cursor: pointer; }
+        .chat-end-btn:hover { background: #c0392b; }
+
+        /* 欢迎语 */
+        .welcome-bar { background: linear-gradient(90deg, #1a5c9e 0%, #2980b2 100%); padding: 10px 20px; font-size: 13px; color: #fff; flex-shrink: 0; }
+        .welcome-bar strong { color: #ff6; }
+
+        /* 聊天记录区 */
+        .chat-messages { flex: 1; overflow-y: auto; padding: 15px 20px; display: flex; flex-direction: column; gap: 15px; }
+
+        /* 消息气泡 */
+        .msg { display: flex; gap: 10px; max-width: 75%; }
+        .msg-avatar { width: 36px; height: 36px; background: #1a5c9e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; color: #fff; font-weight: bold; }
+        .msg-body { background: #fff; border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .msg-name { font-size: 12px; color: #1a5c9e; font-weight: bold; margin-bottom: 4px; }
+        .msg-text { font-size: 14px; color: #333; line-height: 1.6; }
+        .msg-text strong { color: #e74c3c; }
+        .msg-time { font-size: 11px; color: #999; margin-top: 4px; }
+        .msg-text p { margin: 0; }
+
+        /* 输入区 */
+        .chat-input-area { background: #fff; border-top: 1px solid #e0e0e0; padding: 10px 20px; flex-shrink: 0; }
+
+        /* 工具栏 */
+        .input-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .tool-btn { width: 28px; height: 28px; border: 1px solid #ddd; border-radius: 4px; background: #fafafa; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #666; }
+        .tool-btn:hover { background: #f0f0f0; border-color: #bbb; }
+        .tool-btn.font-a { font-weight: bold; font-size: 14px; }
+
+        /* 输入框 */
+        .input-row { display: flex; gap: 10px; align-items: flex-end; }
+        .input-box { flex: 1; border: 1px solid #ddd; border-radius: 6px; padding: 8px 12px; font-size: 14px; resize: none; min-height: 44px; max-height: 100px; outline: none; font-family: inherit; line-height: 1.5; }
+        .input-box:focus { border-color: #1a5c9e; }
+        .input-right { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+        .phone-input { border: 1px solid #ddd; border-radius: 6px; padding: 8px 10px; font-size: 13px; width: 140px; outline: none; }
+        .phone-input:focus { border-color: #1a5c9e; }
+        .callback-btn { background: #1a5c9e; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; white-space: nowrap; }
+        .callback-btn:hover { background: #154c85; }
+
+        /* 底部 */
+        .chat-footer { background: #f8f8f8; padding: 6px 20px; font-size: 11px; color: #999; text-align: center; flex-shrink: 0; border-top: 1px solid #e0e0e0; }
+    </style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8dc596d7a7a18dba71186a42165b6eb7";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body >
+    <div class="chat-page">
+        <!-- 左侧栏 -->
+        <div class="chat-left">
+            <div class="left-top">
+                <div class="left-logo">💬</div>
+                <div class="left-logo-sub">山东英检国际<br>质量技术服务</div>
+            </div>
+
+            <div class="left-ccas">
+                <div class="ccas-badge">英检</div>
+                <div class="ccas-name">山东英检国际质量技术服务有限公司</div>
+            </div>
+
+            <div class="left-menu">
+                <div class="menu-title">▌ 服务项目</div>
+                <div class="menu-item">• 验厂服务</div>
+                <div class="menu-item">• 食品认证</div>
+                <div class="menu-item">• 体系认证</div>
+                <div class="menu-item">• 绿色供应链</div>
+            </div>
+
+            <div class="left-features">
+                <div class="features-title">▌ 服务优势</div>
+                <div class="feature-item"><div class="feature-dot"></div>专业认证团队</div>
+                <div class="feature-item"><div class="feature-dot"></div>一对一指导</div>
+                <div class="feature-item"><div class="feature-dot"></div>一站式服务</div>
+                <div class="feature-item"><div class="feature-dot"></div>快速通过</div>
+            </div>
+
+            <div class="left-hotline">
+                <div class="hotline-label">全国服务热线</div>
+                <div class="hotline-num">400-088-9001</div>
+            </div>
+
+            <div class="left-qr">
+                <div class="qr-box" id="qrBox">
+                    <img src="images/wechat_qr_yingjian.jpg" alt="英检微信二维码" style="width:100%;height:100%;object-fit:contain;">
+                </div>
+                <div class="qr-text">微信扫一扫</div>
+                <div class="qr-phone">15265272850</div>
+            </div>
+        </div>
+
+        <!-- 右侧聊天区 -->
+        <div class="chat-right">
+            <!-- 顶部栏 -->
+            <div class="chat-header">
+                <div class="chat-header-title">
+                    <div class="chat-header-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                    </div>
+                    <div class="chat-header-text">英检在线客服</div>
+                </div>
+                <button class="chat-end-btn" onclick="window.close()">结束对话</button>
+            </div>
+
+            <!-- 欢迎语 -->
+            <div class="welcome-bar">
+                欢迎光临！山东英检国际专业从事验厂、认证等咨询辅导服务，全国业务覆盖，服务网点众多！公司拥有专业团队，就近服务，提供一站式服务，专业快速！欢迎咨询在线客服，获取精准服务！
+            </div>
+
+            <!-- 消息区 -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="msg">
+                    <div class="msg-avatar">英</div>
+                    <div class="msg-body">
+                        <div class="msg-name">英检在线客服</div>
+                        <div class="msg-text">
+                            <p>您好！山东英检国际专业从事验厂/认证咨询辅导服务！全国多省市一站式服务。</p>
+                            <p style="margin-top:6px;">您可以留下<strong>电话+咨询需求</strong>，马上安排顾问为您介绍详细<strong>流程和费用</strong>。</p>
+                            <p style="margin-top:6px;">或直接拨打我公司全国服务热线：<strong>400-088-9001</strong> 进行咨询！</p>
+                        </div>
+                        <div class="msg-time" id="msgTime"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入区 -->
+            <div class="chat-input-area">
+                <div class="input-toolbar">
+                    <button class="tool-btn font-a" title="字体加粗">B</button>
+                    <button class="tool-btn" title="表情">😀</button>
+                    <button class="tool-btn" title="历史">🕐</button>
+                    <button class="tool-btn" title="图片">🖼️</button>
+                    <button class="tool-btn" title="文件">📁</button>
+                    <button class="tool-btn" title="收藏">⭐</button>
+                </div>
+                <div class="input-row">
+                    <textarea class="input-box" id="inputBox" placeholder="请输入文本或粘贴截图..." rows="2"></textarea>
+                    <div class="input-right">
+                        <input type="tel" class="phone-input" id="phoneInput" placeholder="请输入手机号码">
+                        <button class="callback-btn" id="sendBtn">发送</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部 -->
+            <div class="chat-footer">咨询软件由英检技术服务提供 · 请勿输入敏感信息</div>
+        </div>
+    </div>
+
+    <script>
+        // 显示时间
+        function showTime() {
+            var now = new Date();
+            var t = String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0')+':'+String(now.getSeconds()).padStart(2,'0');
+            document.getElementById('msgTime').textContent = t;
+        }
+        showTime();
+
+        // 发送消息
+        var inputBox = document.getElementById('inputBox');
+        var sendBtn = document.getElementById('sendBtn');
+        var chatMessages = document.getElementById('chatMessages');
+
+        function sendMessage() {
+            var text = inputBox.value.trim();
+            if (!text) return;
+            var now = new Date();
+            var t = String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0')+':'+String(now.getSeconds()).padStart(2,'0');
+            var html = '<div class="msg" style="align-self:flex-end;flex-direction:row-reverse;">'+
+                '<div class="msg-avatar" style="background:#27ae60;">您</div>'+
+                '<div class="msg-body" style="background:#dcf8c6;">'+
+                '<div class="msg-name" style="text-align:right;color:#27ae60;">访客</div>'+
+                '<div class="msg-text">'+text.replace(/\n/g,'<br>')+'</div>'+
+                '<div class="msg-time" style="text-align:right;">'+t+'</div>'+
+                '</div></div>';
+            chatMessages.insertAdjacentHTML('beforeend', html);
+            inputBox.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        inputBox.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+        });
+
+        // 输入框自动聚焦
+        inputBox.focus();
+    </script>
+</body>
+</html>
