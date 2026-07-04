@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辽宁**农联农业发展有限公司 - 案例详情</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background: #f5f7fa;
+    line-height: 1.8;
+  }
+  .case-detail-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .case-header { border-bottom: 2px solid #0066cc; padding-bottom: 20px; margin-bottom: 28px; }
+  .case-header h1 { font-size: 24px; color: #1a1a1a; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+  .case-header .case-date { color: #888; font-size: 14px; letter-spacing: 0.5px; }
+  .case-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; margin-bottom: 32px; background: #eee; }
+  .case-content h2 { font-size: 20px; color: #0066cc; border-left: 4px solid #0066cc; padding-left: 12px; margin: 28px 0 14px; }
+  .case-content p { font-size: 15.5px; color: #444; margin-bottom: 14px; text-indent: 2em; text-align: justify; }
+  .case-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; text-align: center; }
+  .back-link { display: inline-block; padding: 10px 28px; background: #0066cc; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; transition: background 0.3s; }
+  .back-link:hover { background: #004f9e; }
+  .case-tags { margin-top: 18px; color: #999; font-size: 13px; }
+  .case-tags span { display: inline-block; padding: 2px 10px; background: #f0f7ff; color: #0066cc; border-radius: 12px; margin: 0 4px; }
+</style>
+</head>
+<body>
+  <div class="case-detail-wrap">
+    <div class="case-header">
+      <h1>辽宁**农联农业发展有限公司与华认联国际签署管理培训合同</h1>
+      <div class="case-date">签约日期：2025-05-25</div>
+    </div>
+
+    <img class="case-cover" src="../images/case2.jpg" alt="辽宁**农联农业发展有限公司">
+
+    <div class="case-content">
+      <h2>案例介绍</h2>
+
+      <p><strong>【客户背景】</strong>辽宁**农联农业发展有限公司是辽宁省供销社体系改制后成立的现代化农业产业联合体，业务涵盖农资集采、粮食仓储、农产品上行、合作社孵化四大板块，连接全省 200 余家农民专业合作社，年带动农户超 3 万户。公司正处于"从行政化运营向市场化运营"转型的关键期，原有科层制管理无法适配"既要服务三农、又要参与市场竞争"的双重定位，亟需通过系统培训建立一支懂农业、懂市场、懂管理的复合型骨干队伍。</p>
+
+      <p><strong>【培训需求】</strong>公司管理层在前期调研中归纳出三大核心需求：第一，帮助总部 30 余名中层骨干完成从"行政思维"到"经营思维"的转变，建立目标管理、客户导向、数据驱动的工作习惯；第二，建立一套覆盖"农资采购—合作社服务—粮食收储—渠道销售"全链条的协同流程，消除部门壁垒；第三，针对县级分公司负责人开展"区域经营赋能"，使其具备独立核算、客户开发、团队管理的综合能力。</p>
+
+      <p><strong>【服务过程】</strong>华认联国际项目组由农业领域资深顾问 + 集团管控专家组成，采用"总部集训+区域陪跑+标杆复制"三步走策略。前 4 周在沈阳总部开展中层骨干封闭集训，内容涵盖《经营思维五项修炼》《目标管理与复盘》《跨部门协同七步法》等 6 大模块；中间 6 周分赴 5 个县级分公司进行驻场辅导，帮助区域负责人完成年度经营计划编制、客户分级管理、团队带教机制搭建；最后 4 周将 5 个标杆区域的成功经验梳理成《区域经营操作手册》，在全省 18 个县级单位复制推广。项目共交付手册 6 套、培训课件 18 套、标杆案例 5 个。</p>
+
+      <p><strong>【服务成果】</strong>项目交付 9 个月后评估：总部骨干"以客户为中心"的工作意识显著增强，跨部门协作效率提升 40%；5 个标杆分公司年度营收同比增长 28%，远超全省平均增速 9%；合作社满意度从 81 分提升至 92 分；公司顺利中标省级"数字农业示范项目"，并被农业农村部列为"全国供销系统改革典型"。公司董事长评价："华认联不是简单做培训，是真正陪我们完成了一次组织变革。"</p>
+
+      <div class="case-tags">
+        <span>农业联合体</span><span>经营思维</span><span>区域赋能</span><span>组织变革</span>
+      </div>
+    </div>
+
+    <div class="case-footer">
+      <a class="back-link" href="../index_0701.html" target="_blank">← 返回客户案例</a>
+    </div>
+  </div>
+</body>
+</html>
