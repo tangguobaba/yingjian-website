@@ -401,260 +401,6 @@
             margin-top: 6px;
         }
 
-        /* Chat dialog popup */
-        .ft-chat-popup {
-            top: 50%;
-            right: 80px;
-            transform: translateY(-50%) translateX(20px);
-            width: 400px;
-            height: 500px;
-            max-width: 92vw;
-            background: #fff;
-            border: 1px solid #e0e6ed;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .ft-chat-popup.show {
-            transform: translateY(-50%) translateX(0);
-        }
-        .ft-chat-header {
-            background: #003366;
-            color: #fff;
-            padding: 6px 8px 6px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex: 0 0 auto;
-        }
-        .ft-chat-header-left { flex: 0 0 auto; }
-        .ft-chat-header-title {
-            flex: 1 1 auto;
-            color: #fff;
-            font-size: 13px;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: left;
-        }
-        .ft-chat-header-right {
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .ft-chat-logo {
-            width: 32px;
-            height: 32px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .ft-chat-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .ft-chat-win-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            color: #fff;
-            font-size: 14px;
-            line-height: 1;
-            cursor: pointer;
-            user-select: none;
-            opacity: 0.9;
-        }
-        .ft-chat-win-btn:hover { opacity: 1; }
-        .ft-chat-header .ft-popup-close {
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            position: static;
-            transform: none;
-            font-size: 18px;
-            line-height: 1;
-        }
-        .ft-chat-body {
-            padding: 10px 12px;
-            font-size: 13px;
-            line-height: 1.6;
-            color: #003366;
-            background: #fff;
-            height: 235px;
-            overflow-y: auto;
-            flex: 0 0 235px;
-        }
-        .ft-chat-body .red {
-            color: #e60012;
-            font-weight: bold;
-        }
-        .ft-chat-msg-system {
-            background: #f0f4f8;
-            color: #003366;
-            padding: 10px 12px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-        .ft-chat-msgs {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .ft-chat-msg-row {
-            display: flex;
-            flex-direction: column;
-            max-width: 80%;
-        }
-        .ft-chat-msg-agent { align-self: flex-start; }
-        .ft-chat-msg-user  { align-self: flex-end; align-items: flex-end; }
-        .ft-chat-bubble {
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            line-height: 1.5;
-            word-break: break-word;
-        }
-        .ft-chat-msg-agent .ft-chat-bubble {
-            background: #f0f4f8;
-            color: #003366;
-        }
-        .ft-chat-msg-user .ft-chat-bubble {
-            background: #1e6bd6;
-            color: #fff;
-        }
-        .ft-chat-meta {
-            font-size: 11px;
-            color: #999;
-            margin-top: 2px;
-            padding: 0 4px;
-        }
-        .ft-chat-input {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            padding: 6px 10px;
-            background: #f5f7fa;
-            border-top: 1px solid #e0e6ed;
-            height: 220px;
-            flex: 0 0 220px;
-            box-sizing: border-box;
-        }
-        .ft-chat-input-main {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            gap: 4px;
-            flex: 1;
-            min-height: 0;
-        }
-        .ft-chat-textarea-wrap {
-            display: block;
-            position: relative;
-            flex: 1;
-            min-height: 0;
-        }
-        .ft-chat-textarea-wrap textarea {
-            width: 100%;
-            height: 100%;
-            padding: 6px 60px 6px 10px;
-            border: 1px solid #cce0f5;
-            border-radius: 4px;
-            font-size: 12px;
-            font-family: inherit;
-            line-height: 1.5;
-            resize: none;
-            outline: none;
-            background: #eaf3fc;
-            box-sizing: border-box;
-            overflow: hidden;
-            word-wrap: break-word;
-        }
-        .ft-chat-textarea-wrap textarea:focus {
-            border-color: #1e6bd6;
-        }
-        .ft-chat-textarea-wrap #ftChatSendBtn {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 54px;
-            height: 40px;
-            padding: 4px 8px;
-            background: #1e6bd6;
-            color: #fff;
-            border: none;
-            border-radius: 0 0 4px 0;
-            font-size: 12px;
-            cursor: pointer;
-        }
-        .ft-chat-textarea-wrap #ftChatSendBtn:hover { background: #1554ad; }
-        .ft-chat-icons {
-            display: flex;
-            gap: 2px;
-            flex: 0 0 auto;
-        }
-        .ft-chat-icon-btn {
-            width: 22px;
-            height: 22px;
-            background: transparent;
-            border: none;
-            color: #999;
-            font-size: 13px;
-            line-height: 1;
-            cursor: pointer;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .ft-chat-icon-btn:hover { color: #1e6bd6; }
-
-        /* Chat callback bar (回电栏) */
-        .ft-chat-callback {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 10px;
-            background: #fff;
-            border-top: 1px solid #e0e6ed;
-            margin-bottom: 4px;
-        }
-        .ft-chat-callback input {
-            flex: 1 1 auto;
-            padding: 5px 10px;
-            border: 1px solid #cce0f5;
-            border-radius: 4px;
-            font-size: 12px;
-            outline: none;
-            background: #eaf3fc;
-            min-width: 0;
-        }
-        .ft-chat-callback input:focus { border-color: #1e6bd6; }
-        .ft-chat-callback-btn {
-            flex: 0 0 auto;
-            padding: 5px 12px;
-            background: #ff6a00;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 12px;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .ft-chat-callback-btn:hover { background: #e55a00; }
-
         /* Navigation */
         .nav {
             background: #004B87;
@@ -1074,7 +820,6 @@
             font-size: 14px;
             opacity: 0.8;
         }
-
 
         /* Customer Cases */
         .customer-cases {
@@ -1502,7 +1247,7 @@ var _hmt = _hmt || [];
 })();
 </script>
 </head>
-<body onload="setTimeout(function(){var p=document.getElementById('ftChatPopup');if(p)p.classList.add('show')},500)">
+<body>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -2149,10 +1894,6 @@ var _hmt = _hmt || [];
     </footer>
     <!-- Floating Toolbar -->
     <div class="floating-toolbar">
-        <div class="tool-item" id="ftChatBtn" title="在线咨询">
-            <span class="tool-tip">在线咨询</span>
-            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
-        </div>
         <div class="tool-item" id="ftPhoneBtn" title="电话咨询">
             <span class="tool-tip">400-088-9001</span>
             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -2168,38 +1909,14 @@ var _hmt = _hmt || [];
     </div>
 
     <!-- Floating Toolbar Popups -->
-    <div class="ft-popup ft-chat-popup" id="ftChatPopup">
-        <div class="ft-chat-header">
-            <div class="ft-chat-header-left">
-                <div class="ft-chat-logo"><img src="images/yingjian-logo.png" alt="英检logo"></div>
             </div>
-            <div class="ft-chat-header-title">客服--小崔</div>
-            <div class="ft-chat-header-right">
-                <span class="ft-popup-close ft-chat-win-close" data-close="ftChatPopup" title="关闭">×</span>
-            </div>
+            
+        
+            
         </div>
-        <div class="ft-chat-body">
-            <div class="ft-chat-msg ft-chat-msg-system">[系统提示] 您好，我是人工客服小崔，您有什么需要咨询的可以联系我，电话<strong>15265272850</strong>（微信同号），谢谢！</div>
-            <div class="ft-chat-msgs" id="ftChatMsgs"></div>
-        </div>
-        <div class="ft-chat-input">
-            <div class="ft-chat-callback">
-                <input type="text" placeholder="请输入手机号码" maxlength="11">
-                <button type="button" class="ft-chat-callback-btn">给我回电</button>
-            </div>
-            <div class="ft-chat-input-main">
-                <div class="ft-chat-icons">
-                    <button type="button" class="ft-chat-icon-btn" title="表情">😀</button>
-                    <button type="button" class="ft-chat-icon-btn" title="历史">🕐</button>
-                    <button type="button" class="ft-chat-icon-btn" title="声音">🔊</button>
-                    <button type="button" class="ft-chat-icon-btn" title="图片">🖼️</button>
-                    <button type="button" class="ft-chat-icon-btn" title="文件">📁</button>
-                    <button type="button" class="ft-chat-icon-btn" title="收藏">⭐</button>
-                </div>
-                <div class="ft-chat-textarea-wrap">
-                    <textarea id="ftChatText" placeholder="请在此输入文本或者粘贴QQ截图" autocomplete="off"></textarea>
-                    <button type="button" id="ftChatSendBtn">发 送</button>
-                </div>
+        
+            
+                
             </div>
         </div>
     </div>
@@ -2262,15 +1979,13 @@ var _hmt = _hmt || [];
     (function(){
         function $(id){ return document.getElementById(id); }
 
-        var chatBtn   = $('ftChatBtn');
-        var phoneBtn  = $('ftPhoneBtn');
+                var phoneBtn  = $('ftPhoneBtn');
         var qrBtn     = $('ftQrBtn');
         var topBtn    = $('ftTopBtn');
-        var chatPop   = $('ftChatPopup');
         var phonePop  = $('ftPhonePopup');
         var qrPop     = $('ftQrPopup');
 
-        var allPops = [chatPop, phonePop, qrPop];
+        var allPops=[phonePop, qrPop];
         function closeAll(){ for (var i=0;i<allPops.length;i++) allPops[i].classList.remove('show'); }
         function toggle(pop){
             var isOpen = pop.classList.contains('show');
@@ -2324,12 +2039,10 @@ var _hmt = _hmt || [];
                 });
             }
             function addMsg(role, text){
-                var wrap = document.createElement('div');
-                wrap.className = 'ft-chat-msg-row ft-chat-msg-' + role;
-                var safe = escapeHtml(text).replace(/\n/g, '<br>');
+                var wrap = document.createElement('div'                var safe = escapeHtml(text).replace(/\n/g, '<br>');
                 wrap.innerHTML =
-                    '<div class="ft-chat-bubble">' + safe + '</div>' +
-                    '<div class="ft-chat-meta">' + nowTime() + '</div>';
+                    '<div class="chat-bubble">' + safe + '</div>' +
+                    '<div class="chat-meta">' + nowTime() + '</div>';
                 msgsEl.appendChild(wrap);
                 msgsEl.scrollTop = msgsEl.scrollHeight;
             }
@@ -2360,7 +2073,7 @@ var _hmt = _hmt || [];
             var stopBubble = function(e){ e.stopPropagation(); };
             textEl.addEventListener('click', stopBubble);
             sendBtn.addEventListener('click', stopBubble);
-            var iconBtns = document.querySelectorAll('.ft-chat-icon-btn');
+            var iconBtns = document.querySelectorAll('.chat-icon-btn');
             for (var i=0;i<iconBtns.length;i++) iconBtns[i].addEventListener('click', stopBubble);
         })();
 
