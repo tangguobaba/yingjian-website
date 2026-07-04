@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>莱阳某食品有限公司 - 案例详情</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background: #f5f7fa;
+    line-height: 1.8;
+  }
+  .case-detail-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .case-header { border-bottom: 2px solid #0066cc; padding-bottom: 20px; margin-bottom: 28px; }
+  .case-header h1 { font-size: 24px; color: #1a1a1a; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+  .case-header .case-date { color: #888; font-size: 14px; letter-spacing: 0.5px; }
+  .case-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; margin-bottom: 32px; background: #eee; }
+  .case-content h2 { font-size: 20px; color: #0066cc; border-left: 4px solid #0066cc; padding-left: 12px; margin: 28px 0 14px; }
+  .case-content p { font-size: 15.5px; color: #444; margin-bottom: 14px; text-indent: 2em; text-align: justify; }
+  .case-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; text-align: center; }
+  .back-link { display: inline-block; padding: 10px 28px; background: #0066cc; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; transition: background 0.3s; }
+  .back-link:hover { background: #004f9e; }
+  .case-tags { margin-top: 18px; color: #999; font-size: 13px; }
+  .case-tags span { display: inline-block; padding: 2px 10px; background: #f0f7ff; color: #0066cc; border-radius: 12px; margin: 0 4px; }
+</style>
+</head>
+<body>
+  <div class="case-detail-wrap">
+    <div class="case-header">
+      <h1>莱阳某食品有限公司与华认联国际签署管理培训合同</h1>
+      <div class="case-date">签约日期：2025-05-14</div>
+    </div>
+
+    <img class="case-cover" src="../images/case1.jpg" alt="莱阳某食品有限公司">
+
+    <div class="case-content">
+      <h2>案例介绍</h2>
+
+      <p><strong>【客户背景】</strong>莱阳某食品有限公司位于山东烟台莱阳，是胶东半岛具有代表性的果蔬深加工企业，主营莱阳梨汁、果脯、果酱、FD 冻干果蔬脆片四大产品线，长期为国内知名饮料品牌、餐饮连锁提供 OEM/ODM 服务。公司占地 120 亩，建有标准化车间 5 座，员工约 450 人，年产值 1.8 亿元。当前企业正处于"代工业务向自主品牌业务转型"的关键期，对内急需建立支撑品牌化运营的精益管理体系，对外急需培养能直接对接商超、电商、直播渠道的复合型营销团队。</p>
+
+      <p><strong>【培训需求】</strong>企业管理层通过前期诊断归纳出四大核心痛点与培训诉求：第一，OEM 业务利润薄、自主品牌业务能力弱，需要搭建"两条腿走路"的差异化运营机制；第二，车间一线员工流动率高、熟练工培养周期长，亟需通过标准化作业降低对个人经验的依赖；第三，针对储干开展"从骨干到管理者"的角色转变训练，弥补技术骨干"管人"短板；第四，打造一支具备"内容策划+直播运营+客户运营"能力的电商铁军。</p>
+
+      <p><strong>【服务过程】</strong>华认联国际项目组采用"双线推进、多点落地"的服务策略。管理线方面，由精益生产顾问牵头，对全部 5 个车间进行 SOP 梳理与产线平衡优化，并辅导储干完成首个"小项目课题"实战；品牌线方面，由品牌营销教练带队，对电商部 20 余名小伙伴开展《品牌定位与产品策划》《抖音直播运营实战》《私域客户运营》等 6 大模块集训，并陪跑 2 场抖音自播大场。两条线同步推进，过程中穿插 3 次高管复盘会，确保管理升级与业务突破同频共振。</p>
+
+      <p><strong>【服务成果】</strong>项目交付半年后成效：自主品牌业务收入占比从 18% 提升至 32%；车间新员工上岗培训周期由 45 天缩短至 28 天；电商团队首次实现单月自播 GMV 突破 300 万元；储干小项目累计输出 12 项改善方案，年化降本约 280 万元。公司总经理评价："华认联最难得的是'懂工厂也懂市场'，两条线一起抓，效果是 1+1>2。" 双方目前已签订二期"品牌出海"战略咨询项目。</p>
+
+      <div class="case-tags">
+        <span>果蔬深加工</span><span>自主品牌</span><span>SOP 标准化</span><span>电商运营</span>
+      </div>
+    </div>
+
+    <div class="case-footer">
+      <a class="back-link" href="../index_0701.html" target="_blank">← 返回客户案例</a>
+    </div>
+  </div>
+</body>
+</html>
