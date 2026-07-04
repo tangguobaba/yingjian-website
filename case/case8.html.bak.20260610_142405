@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青岛****有限公司 - 案例详情</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background: #f5f7fa;
+    line-height: 1.8;
+  }
+  .case-detail-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .case-header { border-bottom: 2px solid #0066cc; padding-bottom: 20px; margin-bottom: 28px; }
+  .case-header h1 { font-size: 24px; color: #1a1a1a; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+  .case-header .case-date { color: #888; font-size: 14px; letter-spacing: 0.5px; }
+  .case-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; margin-bottom: 32px; background: #eee; }
+  .case-content h2 { font-size: 20px; color: #0066cc; border-left: 4px solid #0066cc; padding-left: 12px; margin: 28px 0 14px; }
+  .case-content p { font-size: 15.5px; color: #444; margin-bottom: 14px; text-indent: 2em; text-align: justify; }
+  .case-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; text-align: center; }
+  .back-link { display: inline-block; padding: 10px 28px; background: #0066cc; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; transition: background 0.3s; }
+  .back-link:hover { background: #004f9e; }
+  .case-tags { margin-top: 18px; color: #999; font-size: 13px; }
+  .case-tags span { display: inline-block; padding: 2px 10px; background: #f0f7ff; color: #0066cc; border-radius: 12px; margin: 0 4px; }
+</style>
+</head>
+<body>
+  <div class="case-detail-wrap">
+    <div class="case-header">
+      <h1>青岛****有限公司与华认联国际签署管理培训合同</h1>
+      <div class="case-date">签约日期：2025-05-18</div>
+    </div>
+
+    <img class="case-cover" src="../images/case4.jpg" alt="青岛****有限公司">
+
+    <div class="case-content">
+      <h2>案例介绍</h2>
+
+      <p><strong>【客户背景】</strong>青岛****有限公司是青岛地区专注水产品精深加工与冷链出口的外向型企业，主营即食海产、即烹海鲜礼盒、海洋调味品三大产品线，70% 营收来自日韩、欧美、东南亚海外市场。公司在青岛胶州建有出口备案加工厂，员工 350 余人，年出口额近 2 亿元。近年来海外客户对"食品安全可追溯、社会责任合规、ESG 表现"的要求显著提升，加之汇率波动与国际贸易环境变化，企业管理团队承受巨大压力，亟需从"生产+贸易"思维升级为"品牌+体系"运营能力。</p>
+
+      <p><strong>【培训需求】</strong>总经理与海外事业部负责人联合提出三项核心需求：第一，建立符合 BRC、IFS、SQF 等国际食品安全标准的内审体系，确保持续通过海外客户验厂；第二，对海外销售团队进行"大客户管理与服务"专项训练，提升与海外 KA 客户的战略对话能力；第三，针对总部职能团队建立"以客户为中心"的业务流程，把过去以"出货"为节点的运作模式升级为以"客户体验"为终点的端到端管理。</p>
+
+      <p><strong>【服务过程】</strong>华认联国际派出由外贸合规顾问 + 食品安全体系专家 + 大客户管理教练组成的 5 人项目组，历时 14 周完成交付。前 4 周完成全部生产、仓储、品控、研发部门的体系差距分析，输出《国际化合规升级路线图》；中间 6 周协助企业完成 38 份体系文件的改版与试运行，并对 80 余名内审员进行 BRC Issue 9 标准专项培训；最后 4 周集中赋能海外销售部，开展《大客户战略销售》《客户年度经营 JBP》《海外展会营销实战》等 5 大模块集训，并陪跑 3 个重点客户的年度谈判。项目共完成文件交付 38 套、内审演练 6 轮、海外客户陪访 4 次。</p>
+
+      <p><strong>【服务成果】</strong>项目交付后成效显著：企业顺利通过 2025 年度 BRCGS AA+ 级认证，并首次获得 SQF 认证；海外销售部人均管理客户数由 8 家提升至 14 家，3 个重点客户年度合同金额同比增长 35%；总部职能团队对海外订单响应时效提升 50%；公司被某全球 Top 5 连锁商超纳入"亚太优选供应商"名单。总经理评价："华认联这次不只是培训，是真正帮我们拿到了打开全球高端市场的钥匙。"</p>
+
+      <div class="case-tags">
+        <span>水产品出口</span><span>BRC/IFS 体系</span><span>大客户管理</span><span>国际化运营</span>
+      </div>
+    </div>
+
+    <div class="case-footer">
+      <a class="back-link" href="../index_0701.html" target="_blank">← 返回客户案例</a>
+    </div>
+  </div>
+</body>
+</html>
