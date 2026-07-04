@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广州市***食品有限责任公司 - 案例详情</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background: #f5f7fa;
+    line-height: 1.8;
+  }
+  .case-detail-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .case-header { border-bottom: 2px solid #0066cc; padding-bottom: 20px; margin-bottom: 28px; }
+  .case-header h1 { font-size: 24px; color: #1a1a1a; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+  .case-header .case-date { color: #888; font-size: 14px; letter-spacing: 0.5px; }
+  .case-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; margin-bottom: 32px; background: #eee; }
+  .case-content h2 { font-size: 20px; color: #0066cc; border-left: 4px solid #0066cc; padding-left: 12px; margin: 28px 0 14px; }
+  .case-content p { font-size: 15.5px; color: #444; margin-bottom: 14px; text-indent: 2em; text-align: justify; }
+  .case-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #eee; text-align: center; }
+  .back-link { display: inline-block; padding: 10px 28px; background: #0066cc; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; transition: background 0.3s; }
+  .back-link:hover { background: #004f9e; }
+  .case-tags { margin-top: 18px; color: #999; font-size: 13px; }
+  .case-tags span { display: inline-block; padding: 2px 10px; background: #f0f7ff; color: #0066cc; border-radius: 12px; margin: 0 4px; }
+</style>
+</head>
+<body>
+  <div class="case-detail-wrap">
+    <div class="case-header">
+      <h1>广州市***食品有限责任公司与华认联国际签署管理培训合同</h1>
+      <div class="case-date">签约日期：2025-05-29</div>
+    </div>
+
+    <img class="case-cover" src="../images/case1.jpg" alt="广州市***食品有限责任公司">
+
+    <div class="case-content">
+      <h2>案例介绍</h2>
+
+      <p><strong>【客户背景】</strong>广州市***食品有限责任公司是华南区域知名的广式烘焙与休闲食品企业，主营月饼、糕点、糖果三大品类，产品行销粤港澳大湾区及东南亚市场。公司在广州、佛山建有两座现代化工厂，员工总数约 600 人，年产值 4 亿元以上。随着新生代消费崛起与电商直播渠道爆发，企业同时面临"产品创新提速""线上线下渠道融合""柔性化生产组织"等多重挑战，传统职能制架构下部门墙高筑、响应迟缓的问题日益突出。</p>
+
+      <p><strong>【培训需求】</strong>董事长亲自分管本次项目，明确三大诉求：第一，针对电商、KA、出口三大渠道，建立"以客户为中心"的跨部门项目制运作机制；第二，搭建从新品立项到上市打爆的"90 天新品孵化流程"；第三，对营销中心、供应链中心 80 余名骨干进行"项目管理+敏捷协作"专项赋能。企业方尤其强调，培训要适配广式食品行业"短周期、高密度、强季节性"的特点，不能照搬互联网公司的通用方法论。</p>
+
+      <p><strong>【服务过程】</strong>华认联国际项目组采用"机制设计+流程重塑+能力赋能"三轮驱动模式，历时 12 周完成交付。第一轮与企业高管共创，明确"新品经理负责制""渠道项目铁三角"两大核心机制；第二轮协助梳理《90 天新品孵化流程》，将原本散落在研发、市场、生产、电商等 6 个部门的 23 个节点重新整合为 7 个里程碑；第三轮开展"项目管理实战工作坊"，每个参训小组需带着真实在研新品完成端到端演练。期间累计完成高管访谈 11 场、跨部门研讨会 8 场、项目辅导 16 次。</p>
+
+      <p><strong>【服务成果】</strong>项目落地后成效显著：新品平均上市周期由原先的 145 天压缩至 92 天；电商渠道月均上新 SKU 数提升 65%；2025 年中秋档期新品销售额占总销售额比例从 28% 提升至 41%；跨部门项目组首次实现"研发—生产—电商"三方在同一个看板下协同作业。董事长评价："华认联的项目真正做到让组织跑起来，而不是再上一堆课。" 项目结束后双方续签了"海外渠道管理升级"二期合同。</p>
+
+      <div class="case-tags">
+        <span>广式烘焙</span><span>渠道融合</span><span>新品孵化</span><span>项目制管理</span>
+      </div>
+    </div>
+
+    <div class="case-footer">
+      <a class="back-link" href="../index_0701.html" target="_blank">← 返回客户案例</a>
+    </div>
+  </div>
+</body>
+</html>
