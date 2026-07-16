@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食品咨询 - 山东英检国际质量技术服务有限公司</title>
+    <meta name="description" content="山东英检国际质量技术服务有限公司提供专业食品咨询认证服务，主要有FDA认证，HACCP认证，BRC认证，ISO22000认证，RSPO认证，BAP认证等认证咨询服务。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Microsoft YaHei","PingFang SC",Arial,sans-serif; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* Header */
+        .header { background: #fff; height: 100px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-content { display: flex; justify-content: center; align-items: center; height: 100%; padding-top: 19px; gap: 60px; }
+        .logo { display: flex; align-items: center; flex-shrink: 0; }
+        .logo img { height: 45px; margin-right: 12px; flex-shrink: 0; }
+        .logo-text h1 { font-size: 20px; color: #333; font-weight: bold; line-height: 1.3; white-space: nowrap; }
+        .logo-text p { font-size: 11px; color: #333; line-height: 1.3; white-space: nowrap; letter-spacing: 0.3px; }
+        .header-center { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; }
+        .header-center .search-box { margin-bottom: 6px; }
+        .header-center .header-tags { justify-content: space-between; width: 361px; margin-left: auto; margin-right: auto; }
+        .header-right { flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
+        .search-box { display: flex; border: 1px solid #ddd; border-radius: 0; overflow: hidden; height: 35px; }
+        .search-box select { width: 80px; padding: 8px 5px; border: none; border-right: 1px solid #ddd; outline: none; font-size: 12px; background: #fff; cursor: pointer; height: 100%; }
+        .search-box input { width: 225px; padding: 8px 12px; border: none; outline: none; font-size: 12px; height: 100%; }
+        .search-box button { padding: 8px 15px; height: 100%; background: #0066cc; color: #fff; border: none; cursor: pointer; font-size: 12px; }
+        .hotline { text-align: right; line-height: 1.4; }
+        .hotline .phone { font-size: 23px; color: #0066cc; font-weight: bold; }
+        .header-tags { display: flex; gap: 4px; align-items: center; }
+        .header-tags span { padding: 2px 6px; font-size: 11px; border-radius: 2px; cursor: pointer; background: #0066cc; color: #fff; }
+
+        /* Navigation */
+        .nav { background: #004B87; position: sticky; top: 0; z-index: 100; }
+        .nav ul { display: flex; justify-content: center; }
+        .nav ul li { position: relative; }
+        .nav ul li a { display: block; padding: 10px 22px; color: #fff; font-size: 14px; transition: background 0.3s; text-align: center; line-height: 1.3; }
+        .nav ul li a:hover { background: #003d6b; }
+        .nav ul li a.active { background: #003366; }
+
+        /* Banner */
+        .page-banner {
+            height: 400px;
+            background-image: url('images/banner_spzx.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* Main */
+        main { padding: 40px 0 0; }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .category-tab {
+            padding: 10px 28px;
+            font-size: 15px;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .category-tab:hover { color: #0066cc; }
+        .category-tab.active {
+            color: #0066cc;
+            border-bottom-color: #0066cc;
+            font-weight: bold;
+        }
+
+        /* Grid Container */
+        .grid-container {
+            width: 940px;
+            margin: 0 auto;
+            padding: 0 0 40px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 280px);
+            grid-template-rows: repeat(3, 160px);
+            gap: 15px;
+            justify-content: center;
+        }
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .grid-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,102,204,0.2);
+            border-color: #0066cc;
+        }
+        .grid-item img {
+            width: 280px;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .grid-item-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,102,204,0.85);
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+        }
+
+        /* Footer */
+        .footer { background: #222; color: #ccc; padding: 40px 0 20px; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 30px; padding-bottom: 30px; border-bottom: 1px solid #444; }
+        .footer-about h3 { color: #fff; font-size: 16px; margin-bottom: 12px; }
+        .footer-about p { font-size: 13px; line-height: 1.8; }
+        .footer-links h4 { color: #fff; font-size: 14px; margin-bottom: 12px; }
+        .footer-links ul li { margin-bottom: 8px; }
+        .footer-links ul li a { color: #ccc; font-size: 13px; transition: color 0.3s; }
+        .footer-links ul li a:hover { color: #fff; }
+        .footer-contact h4 { color: #fff; font-size: 14px; margin-bottom: 12px; }
+        .footer-contact p { font-size: 13px; line-height: 1.8; }
+        .footer-bottom { text-align: center; padding-top: 20px; font-size: 12px; color: #888; }
+
+        @media (max-width: 960px) {
+            .grid-container { width: 100%; padding: 0 10px 40px; }
+            .image-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 120px); gap: 10px; }
+            .grid-item, .grid-item img { width: 100%; height: 120px; }
+        }
+        @media (max-width: 768px) {
+            .nav ul { flex-wrap: wrap; }
+            .nav ul li a { padding: 8px 15px; font-size: 13px; }
+            .category-tabs { flex-wrap: wrap; gap: 10px; }
+            .category-tab { padding: 8px 20px; font-size: 13px; }
+            .image-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, 120px); }
+            .grid-item, .grid-item img { width: 100%; height: 120px; }
+            .footer-top { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/yingjian-logo.png" alt="英检logo" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <h1>山东英检国际质量技术服务有限公司</h1>
+                        <p>Yingjian International Quality Technology Service Co., Ltd.</p>
+                    </div>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <select><option>文章</option></select>
+                        <input type="text" placeholder="搜索服务项目...">
+                        <button>搜索</button>
+                    </div>
+                    <div class="header-tags">
+                        <span>FSC</span><span>SMETA</span><span>FDA</span><span>GRS</span><span>BRC</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="hotline">
+                        <p class="phone">客服热线：400-088-9001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="index_1204.html">网站首页</a></li>
+                <li><a href="yczx.html">验厂咨询</a></li>
+                <li><a href="spzx.html" class="active">食品咨询</a></li>
+                <li><a href="rzzx.html">认证咨询</a></li>
+                <li><a href="lsgyl.html">绿色供应链</a></li>
+                <li><a href="khal.html">客户案例</a></li>
+                <li><a href="zjtd.html">专家团队</a></li>
+                <li><a href="zyhz.html">资源合作</a></li>
+                <li><a href="about.html">关于英检</a></li>
+                <li><a href="lxwm.html">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="page-banner"></section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="category-tabs">
+                <div class="category-tab active" data-tab="tab-product">产品认证咨询</div>
+                <div class="category-tab" data-tab="tab-fda">FDA</div>
+                <div class="category-tab" data-tab="tab-system">体系认证咨询</div>
+                <div class="category-tab" data-tab="tab-sustainable">可持续</div>
+                <div class="category-tab" data-tab="tab-religion">宗教信仰</div>
+                <div class="category-tab" data-tab="tab-feed">饲料及添加剂</div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <!-- Tab1: 产品认证咨询 -->
+            <div class="image-grid" id="tab-product">
+                <div class="grid-item"><a href="brcgs.html"><img src="images/spzx_product_1.png" alt="BRCGS食品认证"><div class="grid-item-label">BRCGS食品认证</div></a></div>
+                <div class="grid-item"><a href="rspo.html"><img src="images/spzx_product_2.png" alt="RSPO认证"><div class="grid-item-label">RSPO认证</div></a></div>
+                <div class="grid-item"><a href="globalgap.html"><img src="images/spzx_product_3.png" alt="GLOBALG.A.P"><div class="grid-item-label">GLOBALG.A.P</div></a></div>
+                <div class="grid-item"><a href="bap.html"><img src="images/spzx_product_4.png" alt="BAP"><div class="grid-item-label">BAP</div></a></div>
+                <div class="grid-item"><a href="sqf.html"><img src="images/spzx_product_5.png" alt="SQF认证"><div class="grid-item-label">SQF认证</div></a></div>
+                <div class="grid-item"><a href="ifs.html"><img src="images/spzx_product_6.png" alt="IFS认证"><div class="grid-item-label">IFS认证</div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_7.png" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_8.png" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_9.png" alt=""><div class="grid-item-label"> </div></a></div>
+            </div>
+
+            <!-- Tab2: FDA -->
+            <div class="image-grid" id="tab-fda" style="display:none;">
+                <div class="grid-item"><a href="fda.html"><img src="images/spzx_product_10.png" alt="FDA"><div class="grid-item-label">FDA</div></a></div>
+                <div class="grid-item"><a href="fsvp.html"><img src="images/spzx_product_11.png" alt="FSVP"><div class="grid-item-label">FSVP</div></a></div>
+                <div class="grid-item"><a href="vqip.html"><img src="images/spzx_product_12.png" alt="VQIP"><div class="grid-item-label">VQIP</div></a></div>
+                <div class="grid-item"><a href="fsma507.html"><img src="images/spzx_product_13.png" alt="FSMA507"><div class="grid-item-label">FSMA507</div></a></div>
+                <div class="grid-item"><a href="fsma117.html"><img src="images/spzx_product_14.png" alt="FSMA117"><div class="grid-item-label">FSMA117</div></a></div>
+                <div class="grid-item"><a href="fsma.html"><img src="images/spzx_product_15.png" alt="FSMA"><div class="grid-item-label">FSMA</div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_16.png" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_17.png" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_18.png" alt=""><div class="grid-item-label"> </div></a></div>
+            </div>
+
+            <!-- Tab3: 体系认证咨询 -->
+            <div class="image-grid" id="tab-system" style="display:none;">
+                <div class="grid-item"><a href="haccp.html"><img src="images/spzx_product_19.png" alt="HACCP认证"><div class="grid-item-label">HACCP认证</div></a></div>
+                <div class="grid-item"><a href="fssc22000.html"><img src="images/spzx_product_20.png" alt="FSSC22000"><div class="grid-item-label">FSSC22000</div></a></div>
+                <div class="grid-item"><a href="iso22000.html"><img src="images/spzx_product_21.png" alt="ISO22000认证"><div class="grid-item-label">ISO22000认证</div></a></div>
+                <div class="grid-item"><a href="brcgs.html"><img src="images/spzx_product_22.png" alt="BRCGS"><div class="grid-item-label">BRCGS</div></a></div>
+                <div class="grid-item"><a href="ifs.html"><img src="images/spzx_product_23.png" alt="IFS"><div class="grid-item-label">IFS</div></a></div>
+                <div class="grid-item"><a href="sqf.html"><img src="images/spzx_product_24.png" alt="SQF"><div class="grid-item-label">SQF</div></a></div>
+                <div class="grid-item"><a href="globalgap.html"><img src="images/spzx_product_25.png" alt="GLOBALG.A.P"><div class="grid-item-label">GLOBALG.A.P</div></a></div>
+                <div class="grid-item"><a href="rspo.html"><img src="images/spzx_product_26.png" alt="RSPO"><div class="grid-item-label">RSPO</div></a></div>
+                <div class="grid-item"><a href="bap.html"><img src="images/spzx_product_27.png" alt="BAP"><div class="grid-item-label">BAP</div></a></div>
+            </div>
+
+            <!-- Tab4: 可持续 -->
+            <div class="image-grid" id="tab-sustainable" style="display:none;">
+                <div class="grid-item"><a href="bonsucro.html"><img src="images/spzx_product_28.png" alt="Bonsucro"><div class="grid-item-label">Bonsucro甘蔗</div></a></div>
+                <div class="grid-item"><a href="msc.html"><img src="images/spzx_product_29.png" alt="MSC渔场认证"><div class="grid-item-label">MSC渔场认证</div></a></div>
+                <div class="grid-item"><a href="asc.html"><img src="images/spzx_product_30.png" alt="ASC养殖场认证"><div class="grid-item-label">ASC养殖场认证</div></a></div>
+                <div class="grid-item"><a href="fairtrade.html"><img src="images/spzx_product_31.png" alt="公平贸易"><div class="grid-item-label">公平贸易</div></a></div>
+                <div class="grid-item"><a href="rspo.html"><img src="images/spzx_product_32.png" alt="RSPO"><div class="grid-item-label">RSPO</div></a></div>
+                <div class="grid-item"><a href="coffee.html"><img src="images/spzx_product_33.png" alt="咖啡可可茶叶"><div class="grid-item-label">咖啡可可茶叶</div></a></div>
+                <div class="grid-item"><a href="sai.html"><img src="images/spzx_product_34.png" alt="SAI"><div class="grid-item-label">SAI农业评价</div></a></div>
+                <div class="grid-item"><a href="rtrs.html"><img src="images/spzx_product_35.png" alt="RTRS"><div class="grid-item-label">RTRS大豆</div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_36.png" alt=""><div class="grid-item-label"> </div></a></div>
+            </div>
+
+            <!-- Tab5: 宗教信仰 -->
+            <div class="image-grid" id="tab-religion" style="display:none;">
+                <div class="grid-item"><a href="halal.html"><img src="images/spzx_product_37.png" alt="清真认证"><div class="grid-item-label">清真认证</div></a></div>
+                <div class="grid-item"><a href="glutenfree.html"><img src="images/spzx_product_38.png" alt="无麸质认证"><div class="grid-item-label">无麸质认证</div></a></div>
+                <div class="grid-item"><a href="vegan.html"><img src="images/spzx_product_39.png" alt="素食认证"><div class="grid-item-label">素食认证</div></a></div>
+                <div class="grid-item"><a href="kosher.html"><img src="images/spzx_product_40.png" alt="洁食认证"><div class="grid-item-label">洁食认证</div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_41.png" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="images/spzx_product_42.png" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+            </div>
+
+            <!-- Tab6: 饲料及添加剂 (暂无图，先空着) -->
+            <div class="image-grid" id="tab-feed" style="display:none;">
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+                <div class="grid-item"><a href="#"><img src="" alt=""><div class="grid-item-label"> </div></a></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <h3>山东英检国际质量技术服务有限公司</h3>
+                    <p>国内成立较早的规模较大的验厂服务机构，专业从事现代企业管理研究和国际标准认证咨询的顾问机构。</p>
+                    <p style="margin-top:10px;">服务热线：400-088-9001 / 400-967-7001</p>
+                </div>
+                <div class="footer-links">
+                    <h4>关于英检</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">专家团队</a></li>
+                        <li><a href="#">服务流程</a></li>
+                        <li><a href="#">服务承诺</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务范围</h4>
+                    <ul>
+                        <li><a href="yczx.html">验厂咨询</a></li>
+                        <li><a href="spzx.html">食品咨询</a></li>
+                        <li><a href="rzzx.html">认证咨询</a></li>
+                        <li><a href="lsgyl.html">绿色供应链</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>热门服务</h4>
+                    <ul>
+                        <li><a href="#">SMETA验厂/Sedex验厂</a></li>
+                        <li><a href="#">FSC森林认证</a></li>
+                        <li><a href="#">GRS认证</a></li>
+                        <li><a href="#">BSCI认证</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p>争议部咨询：400-088-9001</p>
+                    <p>食品热线：400-967-7001</p>
+                    <p>北京办公室 / 上海办公室 / 济南办公室</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 山东英检国际质量技术服务有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.category-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(function(t) { t.classList.remove('active'); });
+                this.classList.add('active');
+                var targetId = this.getAttribute('data-tab');
+                document.querySelectorAll('.image-grid').forEach(function(grid) { grid.style.display = 'none'; });
+                var target = document.getElementById(targetId);
+                if (target) target.style.display = 'grid';
+            });
+        });
+    </script>
+</body>
+</html>
